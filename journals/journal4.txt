@@ -1,6 +1,6 @@
 # Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
 
-Nom: Markus Andersson
+Nom: Deepa Krishnan
 Numéro d'étudiant: 20XX101
 
 ## Semaine 1 (date: 05/02/2025)

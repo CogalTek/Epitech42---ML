@@ -1,11 +1,11 @@
 ## Journaux de Projet Individuels
 
-### Journal 1: Emma Larsson
+### Journal 1: Rémi Maigrot
 
 ```markdown
 # Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
 
-Nom: Emma Larsson
+Nom: Rémi Maigrot
 Numéro d'étudiant: 20XX123
 
 ## Semaine 1 (date: 05/02/2025)

@@ -1,6 +1,6 @@
 # Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
 
-Nom: Linnea Ek
+Nom: Loshma Latha Babu
 Numéro d'étudiant: 20XX202
 
 ## Semaine 1 (date: 05/02/2025)
