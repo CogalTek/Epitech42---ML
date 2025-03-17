@@ -1,0 +1,16 @@
+Temperature
+Precipitation
+SnowDepth
+SunshineHours
+Month
+DayOfWeek
+Season
+Price_lag_1
+Price_lag_2
+Price_lag_3
+Price_lag_4
+Price_lag_5
+Price_lag_6
+Price_lag_7
+Price_MA7
+Temp_MA7
