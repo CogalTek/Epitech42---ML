@@ -79,7 +79,7 @@ Rémi Maigrot
 Mathieu Rio
 Arthur Bourdin
 Deepa Krishnan
-Loshma
+Loshma Latha Babu
 
 ## Licence
 Ce projet est développé dans le cadre académique de Jönköping University. Les données utilisées sont la propriété de leurs fournisseurs respectifs (ENTSO-E et SMHI).
