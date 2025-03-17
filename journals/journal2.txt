@@ -1,0 +1,61 @@
+# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+
+Nom: Anders Johansson
+Numéro d'étudiant: 20XX456
+
+## Semaine 1 (date: 05/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai pris la responsabilité de l'exploration des données météorologiques de SMHI. J'ai examiné la structure des fichiers pour les différents paramètres (température, précipitations, neige, ensoleillement) et évalué la couverture des stations dans la zone SE3. J'ai également commencé à développer le script pour extraire et prétraiter ces données.
+
+### Ce que j'ai appris/mes réflexions
+Les données météorologiques présentent des défis spécifiques : formats inconsistants entre les paramètres, valeurs manquantes fréquentes, et différentes fréquences d'échantillonnage. J'ai appris à gérer ces problèmes en utilisant des techniques appropriées de prétraitement. J'ai également été surpris par la quantité de stations disponibles et la diversité des paramètres mesurés.
+
+### Plan pour la semaine prochaine
+- Finaliser le script de prétraitement des données météorologiques
+- Créer des visualisations pour explorer les relations entre variables météo et prix
+- Commencer à construire un pipeline d'intégration des données
+
+## Semaine 2 (date: 12/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai finalisé le script de prétraitement des données météorologiques et créé des visualisations pour explorer les corrélations. J'ai travaillé avec Emma pour fusionner les données météo avec les données de prix. J'ai également commencé à développer le modèle Random Forest et à explorer différentes configurations d'hyperparamètres.
+
+### Ce que j'ai appris/mes réflexions
+Les analyses de corrélation ont révélé des relations intéressantes : la température a l'impact le plus fort sur les prix, suivie par l'ensoleillement. Les précipitations et l'épaisseur de neige ont des effets plus modérés mais toujours significatifs. J'ai également appris l'importance de l'agrégation spatiale appropriée des données météorologiques pour obtenir des valeurs représentatives de la région.
+
+### Plan pour la semaine prochaine
+- Optimiser les hyperparamètres du modèle Random Forest
+- Explorer différentes techniques de sélection de caractéristiques
+- Commencer à documenter les résultats du modèle
+
+## Semaine 3 (date: 19/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai travaillé sur l'optimisation du modèle Random Forest en utilisant une recherche en grille pour les hyperparamètres. J'ai implémenté une analyse d'importance des caractéristiques pour comprendre quelles variables avaient le plus d'impact sur les prédictions. J'ai également commencé à rédiger la section du rapport concernant le modèle Random Forest.
+
+### Ce que j'ai appris/mes réflexions
+L'optimisation des hyperparamètres a amélioré les performances du modèle, mais pas autant que je l'espérais. J'ai découvert que les variables retardées (prix des jours précédents) dominaient largement l'importance des caractéristiques, ce qui est logique mais pose des questions sur l'utilité réelle des variables météorologiques dans ce contexte.
+
+### Plan pour la semaine prochaine
+- Finaliser l'évaluation du modèle Random Forest
+- Contribuer à la comparaison globale des modèles
+- Continuer la rédaction du rapport
+
+## Semaine 4 (date: 26/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai finalisé l'évaluation du modèle Random Forest et contribué à la comparaison des trois modèles. J'ai été surpris de voir que le modèle Ridge surpassait le Random Forest, ce qui m'a amené à faire des analyses supplémentaires pour comprendre pourquoi. J'ai également participé à la création du modèle d'ensemble et à l'évaluation de sa performance.
+
+### Ce que j'ai appris/mes réflexions
+Cette dernière semaine m'a permis de comprendre l'importance de l'interprétabilité des modèles. Bien que le Random Forest n'ait pas obtenu les meilleures performances, il offre une perspective précieuse sur l'importance relative des différentes variables. J'ai également appris que la complexité d'un modèle n'est pas toujours corrélée à sa performance.
+
+### Plan pour la semaine prochaine
+- Finaliser la documentation du code
+- Contribuer aux dernières révisions du rapport
+- Préparer la démonstration des modèles pour la présentation finale
+
+## Réflexion finale sur le projet
+Ce projet a été une excellente opportunité d'appliquer des techniques d'apprentissage automatique à un problème réel avec des implications économiques concrètes. La prédiction des prix de l'électricité est un domaine fascinant qui combine des éléments de séries temporelles, de météorologie et d'économie.
+
+J'ai particulièrement apprécié le travail sur le modèle Random Forest et l'analyse d'importance des caractéristiques, qui a fourni des insights précieux sur les facteurs influençant les prix. La collaboration avec l'équipe a été enrichissante, chacun apportant ses compétences spécifiques. Pour des travaux futurs, j'aimerais explorer davantage les modèles hybrides qui combinent les avantages de différentes approches.

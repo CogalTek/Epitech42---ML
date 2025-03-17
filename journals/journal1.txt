@@ -1,0 +1,66 @@
+## Journaux de Projet Individuels
+
+### Journal 1: Emma Larsson
+
+```markdown
+# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+
+Nom: Emma Larsson
+Numéro d'étudiant: 20XX123
+
+## Semaine 1 (date: 05/02/2025)
+
+### Ce que j'ai fait cette semaine
+Cette première semaine, j'ai travaillé sur la compréhension du problème et la collecte des données. J'ai exploré les fichiers de prix d'électricité de l'ENTSO-E pour la zone SE3 et analysé leur structure. J'ai également participé à la réunion de lancement du projet avec notre groupe, où nous avons défini les rôles et les objectifs.
+
+### Ce que j'ai appris/mes réflexions
+J'ai découvert la complexité du marché de l'électricité suédois et comment les prix varient selon les zones géographiques. Les fichiers CSV contiennent des informations horaires que nous devrons agréger en données quotidiennes. J'ai également appris à manipuler des fichiers CSV volumineux avec pandas, ce qui m'a permis de mieux comprendre les structures de données.
+
+### Plan pour la semaine prochaine
+- Finaliser le script de chargement des données de prix d'électricité
+- Commencer l'analyse exploratoire des données
+- Explorer les corrélations entre les prix et les variables temporelles (jour de la semaine, mois, etc.)
+
+## Semaine 2 (date: 12/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai finalisé le script de prétraitement des données de prix et j'ai commencé à travailler sur l'analyse exploratoire. J'ai créé plusieurs visualisations pour comprendre les tendances et la saisonnalité des prix. J'ai également intégré les données météorologiques dans notre ensemble de données, en veillant à ce que les dates soient correctement alignées.
+
+### Ce que j'ai appris/mes réflexions
+L'analyse des données a révélé des tendances saisonnières claires dans les prix de l'électricité, avec des pics en hiver et des creux en été. J'ai également découvert une forte corrélation entre la température et les prix. Le processus de fusion des données de différentes sources a été plus complexe que prévu, notamment en raison des différences de format de date.
+
+### Plan pour la semaine prochaine
+- Créer des caractéristiques supplémentaires (lag features, moyennes mobiles)
+- Préparer les données pour l'entraînement des modèles
+- Documenter le processus de prétraitement des données
+
+## Semaine 3 (date: 19/02/2025)
+
+### Ce que j'ai fait cette semaine
+Cette semaine, j'ai travaillé sur la création de caractéristiques avancées pour les modèles, notamment les variables retardées (lag) et les moyennes mobiles. J'ai aussi participé à l'implémentation du modèle de régression Ridge et à l'évaluation de ses performances initiales. J'ai commencé à rédiger la section "Données et Méthodologie" du rapport.
+
+### Ce que j'ai appris/mes réflexions
+La création de variables retardées a considérablement amélioré les performances du modèle. J'ai été surprise par l'efficacité du modèle Ridge malgré sa simplicité relative. J'ai également appris l'importance de la normalisation des caractéristiques pour les modèles de régression régularisée.
+
+### Plan pour la semaine prochaine
+- Finaliser l'analyse des performances du modèle Ridge
+- Contribuer à la comparaison des modèles
+- Continuer la rédaction du rapport
+
+## Semaine 4 (date: 26/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai finalisé l'analyse des performances du modèle Ridge et contribué à la comparaison avec les autres modèles. J'ai également participé à la création des visualisations finales pour le rapport et à la rédaction des sections "Résultats" et "Conclusion". J'ai aidé à organiser le code et à préparer la documentation.
+
+### Ce que j'ai appris/mes réflexions
+La comparaison des modèles a été très instructive. J'ai été impressionnée par les excellentes performances du modèle Ridge, qui a surpassé des méthodes plus complexes comme le Random Forest et le MLP. Cela m'a rappelé l'importance de ne pas toujours se précipiter vers les modèles les plus complexes avant d'avoir testé des approches plus simples.
+
+### Plan pour la semaine prochaine
+- Finaliser le rapport
+- Préparer la présentation du projet
+- Réviser et commenter le code pour la soumission finale
+
+## Réflexion finale sur le projet
+Ce projet m'a permis d'appliquer des techniques d'apprentissage automatique à un problème concret et pertinent. J'ai particulièrement apprécié le travail sur la préparation des données et l'analyse exploratoire, qui sont souvent les étapes les plus cruciales mais négligées dans les projets de science des données. J'ai également appris l'importance de la collaboration et de la communication claire au sein d'une équipe.
+
+La découverte que le modèle Ridge fonctionnait si bien a été une leçon importante sur le principe de parcimonie en modélisation. À l'avenir, je souhaiterais explorer davantage l'intégration d'autres variables explicatives, comme les données de production d'énergie renouvelable ou la demande nationale d'électricité.

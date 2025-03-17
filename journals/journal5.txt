@@ -1,0 +1,60 @@
+# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+
+Nom: Linnea Ek
+Numéro d'étudiant: 20XX202
+
+## Semaine 1 (date: 05/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai pris en charge l'analyse du contexte industriel et des besoins spécifiques de Habo Plast en matière de prédiction des prix de l'électricité. J'ai recherché des informations sur l'industrie plastique et ses exigences énergétiques, ainsi que sur le fonctionnement du marché de l'électricité en Suède. J'ai également participé à la définition des objectifs du projet et à l'élaboration du plan de travail.
+
+### Ce que j'ai appris/mes réflexions
+J'ai découvert que l'industrie plastique est particulièrement sensible aux coûts énergétiques, qui peuvent représenter jusqu'à 20% des coûts opérationnels. La Suède, avec son système de zones de prix, présente un marché électrique complexe où les prix peuvent varier considérablement selon les régions et les saisons. Cette compréhension du contexte est essentielle pour développer un modèle vraiment utile pour Habo Plast.
+
+### Plan pour la semaine prochaine
+- Analyser les implications économiques des erreurs de prédiction
+- Commencer à explorer les relations entre les prix de l'électricité et les variables économiques
+- Contribuer à la définition des métriques d'évaluation pertinentes
+
+## Semaine 2 (date: 12/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai analysé les implications économiques des erreurs de prédiction pour Habo Plast et développé un cadre pour évaluer l'impact financier des différents types d'erreurs. J'ai également commencé à explorer les relations entre les prix de l'électricité et diverses variables économiques, bien que nous ayons décidé de nous concentrer principalement sur les variables météorologiques pour ce projet. J'ai contribué à la définition des métriques d'évaluation, en mettant l'accent sur leur pertinence pour l'industrie.
+
+### Ce que j'ai appris/mes réflexions
+L'analyse économique a révélé que pour Habo Plast, sous-estimer les prix de l'électricité peut être plus coûteux que les surestimer, car cela peut conduire à des décisions de production non optimales. J'ai également appris que les relations entre les prix de l'électricité et les variables économiques sont complexes et souvent influencées par des politiques gouvernementales et des facteurs géopolitiques qui sont difficiles à intégrer dans un modèle.
+
+### Plan pour la semaine prochaine
+- Commencer à rédiger l'introduction et le contexte du rapport
+- Contribuer à l'interprétation des résultats préliminaires des modèles
+- Explorer les implications pratiques des prédictions pour Habo Plast
+
+## Semaine 3 (date: 19/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai rédigé l'introduction et le contexte du rapport, en mettant l'accent sur la pertinence du projet pour Habo Plast et l'industrie plastique en général. J'ai également contribué à l'interprétation des résultats préliminaires des modèles, en évaluant leur utilité pratique pour la planification de la production. J'ai commencé à élaborer des recommandations sur la façon dont Habo Plast pourrait intégrer ces prédictions dans ses processus décisionnels.
+
+### Ce que j'ai appris/mes réflexions
+L'interprétation des résultats des modèles m'a fait réaliser l'importance de la communication claire des prédictions et de leurs incertitudes aux décideurs. Un modèle parfait sur le plan statistique peut être inutile s'il n'est pas compréhensible ou utilisable par les personnes qui doivent prendre des décisions basées sur ses prédictions. J'ai également réfléchi à la manière dont les prédictions pourraient être intégrées dans un système d'aide à la décision plus large.
+
+### Plan pour la semaine prochaine
+- Finaliser les implications pratiques et les recommandations
+- Contribuer à la rédaction de la conclusion
+
+## Semaine 4 (date: 26/02/2025)
+
+### Ce que j'ai fait cette semaine
+J'ai finalisé la section sur les implications pratiques et les recommandations pour Habo Plast, en détaillant comment l'entreprise pourrait utiliser le modèle de prédiction pour optimiser sa consommation énergétique. J'ai également contribué à la rédaction de la conclusion du rapport et à la préparation de la présentation finale. J'ai collaboré avec l'ensemble de l'équipe pour assurer la cohérence du rapport et vérifier que nos recommandations sont basées sur des résultats solides.
+
+### Ce que j'ai appris/mes réflexions
+Cette dernière semaine a renforcé mon appréciation de l'importance de traduire les résultats techniques en recommandations pratiques et actionnables. J'ai également appris l'importance de la communication claire et concise des résultats complexes à un public non technique. En examinant l'ensemble du projet, j'ai été impressionnée par la façon dont des modèles relativement simples peuvent fournir des informations précieuses pour des décisions commerciales importantes.
+
+### Plan pour la semaine prochaine
+- Préparer la présentation finale du projet
+- Recueillir les commentaires sur nos recommandations
+- Réfléchir aux possibilités d'extension du projet
+
+## Réflexion finale sur le projet
+Ce projet a été une excellente occasion d'appliquer des techniques d'apprentissage automatique à un problème industriel concret avec des implications économiques significatives. J'ai particulièrement apprécié de pouvoir combiner des aspects techniques (modélisation, analyse de données) avec des considérations commerciales (implications pour Habo Plast, recommandations pratiques).
+
+L'excellent résultat du modèle Ridge montre qu'une approche relativement simple peut être très efficace lorsqu'elle est appliquée avec une bonne compréhension du problème et des données de qualité. Pour l'avenir, je serais intéressée par l'exploration de l'intégration de ce modèle dans un système plus large d'optimisation de la production, qui pourrait prendre en compte non seulement les prix de l'électricité, mais aussi d'autres facteurs comme la demande de produits, les coûts des matières premières et les contraintes de capacité.
