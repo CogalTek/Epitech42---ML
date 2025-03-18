@@ -1,94 +1,94 @@
-# Manuel d'utilisation - Système de prédiction des prix de l'électricité pour Habo Plast
+# User Manual - Electricity Price Prediction System for Habo Plast
 
-Ce manuel explique comment utiliser le système de prédiction des prix de l'électricité développé pour Habo Plast. Le système permet de prédire les prix quotidiens de l'électricité dans la zone SE3 de Suède en utilisant des données météorologiques et historiques.
+This manual explains how to use the electricity price prediction system developed for Habo Plast. The system allows you to predict daily electricity prices in the SE3 zone of Sweden using weather and historical data.
 
 ## Installation
 
-1. Assurez-vous que Python 3.8 ou supérieur est installé sur votre système.
-2. Installez les dépendances requises:
+1. Make sure Python 3.8 or higher is installed on your system.
+2. Install the required dependencies:
    ```bash
    pip install numpy pandas matplotlib seaborn scikit-learn tensorflow joblib
-3. Clonez ou téléchargez le dépôt contenant le code source.
+3. Clone or download the repository containing the source code.
 
-## Structure des fichiers
-Le système est composé des fichiers suivants:
+## File Structure
+The system is made up of the following files:
 
-- data_preparation.py: Module de préparation des données
-- model1_linear_regression.py: Implémentation du modèle de régression Ridge
-- model2_ensemble_methods.py: Implémentation des méthodes d'ensemble (Random Forest)
-- model3_neural_networks.py: Implémentation des réseaux de neurones
-- model_comparison.py: Scripts de comparaison des modèles
-- prediction_function.py: Fonction unifiée pour effectuer des prédictions
-- main.py: Script principal pour exécuter l'ensemble du pipeline
+- data_preparation.py: Data preparation module
+- model1_linear_regression.py: Implementation of the Ridge regression model
+- model2_ensemble_methods.py: Implementation of ensemble methods (Random Forest)
+- model3_neural_networks.py: Implementation of neural networks
+- model_comparison.py: Model comparison scripts
+- prediction_function.py: Unified function for making predictions
+- main.py: Main script to run the entire pipeline
 
-## Exécution du pipeline complet
-Pour exécuter l'ensemble du pipeline (préparation des données, entraînement des modèles, évaluation et comparaison):
+## Running the Complete Pipeline
+To run the entire pipeline (data preparation, model training, evaluation and comparison):
 
 ```bash
 python main.py
 ```
 
-Cette commande:
+This command:
 
-1) Préparera les données à partir des sources brutes
-2) Entraînera les trois modèles de prédiction
-3) Évaluera et comparera leurs performances
-4) Générera des visualisations et rapports dans le dossier results/
+1) Will prepare the data from raw sources
+2) Will train the three prediction models
+3) Will evaluate and compare their performance
+4) Will generate visualizations and reports in the results/ folder
 
-Le processus complet prend généralement environ 10-15 minutes selon les performances de votre ordinateur.
+The complete process usually takes about 10-15 minutes depending on your computer's performance.
 
-## Faire de nouvelles prédictions
-Pour utiliser les modèles entraînés afin de prédire les prix de l'électricité pour une nouvelle journée, utilisez la fonction predict_electricity_price du module prediction_function.py:
+## Making New Predictions
+To use the trained models to predict electricity prices for a new day, use the predict_electricity_price function from the prediction_function.py module:
 
 ```bash
 from prediction_function import predict_electricity_price
 from datetime import datetime
 
-# Exemple de prédiction pour une journée spécifique
+# Example prediction for a specific day
 prediction = predict_electricity_price(
-    date=datetime(2025, 3, 15),             # Date de la prédiction
-    temperature=10.5,                       # Température moyenne (°C)
-    precipitation=1.2,                      # Précipitations (mm)
-    snow_depth=0.0,                         # Épaisseur de neige (cm)
-    sunshine_hours=6.5,                     # Durée d'ensoleillement (heures)
-    historical_prices=[45.2, 47.8, 50.1, 49.3, 48.7, 51.2, 52.5]  # Prix des 7 derniers jours
+    date=datetime(2025, 3, 15),             # Prediction date
+    temperature=10.5,                       # Average temperature (°C)
+    precipitation=1.2,                      # Precipitation (mm)
+    snow_depth=0.0,                         # Snow depth (cm)
+    sunshine_hours=6.5,                     # Sunshine duration (hours)
+    historical_prices=[45.2, 47.8, 50.1, 49.3, 48.7, 51.2, 52.5]  # Prices for the last 7 days
 )
 
 print(prediction)
 ```
 
-Cette fonction retourne un dictionnaire contenant les prédictions de chaque modèle ainsi que la prédiction d'ensemble:
+This function returns a dictionary containing the predictions of each model as well as the ensemble prediction:
 
 ```bash
-    'Linear Regression': 53.24,         # Prédiction du modèle Ridge
-    'Ensemble Method': 55.12,           # Prédiction du Random Forest
-    'Neural Network': 54.18,            # Prédiction du MLP
-    'Ensemble (Average)': 54.18         # Moyenne des trois modèles
+    'Linear Regression': 53.24,         # Ridge model prediction
+    'Ensemble Method': 55.12,           # Random Forest prediction
+    'Neural Network': 54.18,            # MLP prediction
+    'Ensemble (Average)': 54.18         # Average of the three models
 ```
 
-## Interprétation des résultats
-Pour interpréter les résultats des prédictions:
+## Understanding the Results
+To understand the prediction results:
 
-1) Le modèle Linear Regression (Ridge) a montré les meilleures performances globales (R² = 0.9987) et devrait être considéré comme le plus fiable dans la plupart des situations.
-2) Le modèle Neural Network (MLP) est également très précis (R² = 0.9755) et peut parfois mieux capturer les changements brusques de prix.
-3) La prédiction Ensemble (Average) combine les trois modèles et peut offrir une robustesse supplémentaire contre les erreurs importantes d'un modèle individuel.
-4) Utilisez la valeur MAE (Mean Absolute Error) pour estimer l'erreur typique des prédictions. Pour le modèle Ridge, l'erreur moyenne est d'environ 0.96 EUR/MWh.
+1) The Linear Regression (Ridge) model showed the best overall performance (R² = 0.9987) and should be considered the most reliable in most situations.
+2) The Neural Network (MLP) model is also very accurate (R² = 0.9755) and can sometimes better capture sudden price changes.
+3) The Ensemble (Average) prediction combines the three models and can offer extra protection against large errors from any single model.
+4) Use the MAE (Mean Absolute Error) value to estimate the typical error of the predictions. For the Ridge model, the average error is about 0.96 EUR/MWh.
 
-## Mises à jour des modèles
-Pour maintenir la précision des prédictions, il est recommandé de réentraîner les modèles régulièrement (idéalement tous les mois) avec les nouvelles données de prix et météorologiques. Pour ce faire:
+## Model Updates
+To keep prediction accuracy high, it is recommended to retrain the models regularly (ideally every month) with new price and weather data. To do this:
 
-1) Mettez à jour les fichiers CSV dans les dossiers ./habo_plast/electricity/ et ./habo_plast/smhi_data_2022-today/
-2) Exécutez à nouveau le script principal:
+1) Update the CSV files in the ./habo_plast/electricity/ and ./habo_plast/smhi_data_2022-today/ folders
+2) Run the main script again:
 
 ```bash
 python main.py
 ```
 
-## Dépannage
-Si vous rencontrez des problèmes:
+## Troubleshooting
+If you encounter problems:
 
-1) Erreur lors du chargement des données: Vérifiez que les fichiers CSV sont présents dans les chemins attendus et ont le format correct.
-2) Erreur lors de la prédiction: Assurez-vous que les modèles ont été correctement entraînés et que les fichiers de modèle sont présents dans le dossier ./models/.
-3) Prédictions anormales: Si les prédictions semblent irréalistes (trop élevées ou trop basses), vérifiez que les valeurs d'entrée (température, précipitations, etc.) sont dans des plages raisonnables et que les prix historiques sont correctement ordonnés (du plus ancien au plus récent).
+1) Error when loading data: Check that the CSV files are in the expected paths and have the correct format.
+2) Error when making predictions: Make sure the models have been properly trained and that the model files are present in the ./models/ folder.
+3) Abnormal predictions: If the predictions seem unrealistic (too high or too low), check that the input values (temperature, precipitation, etc.) are in reasonable ranges and that the historical prices are correctly ordered (from oldest to newest).
 
-Pour toute assistance supplémentaire, contactez l'équipe de développement.
+For any additional help, contact the development team.

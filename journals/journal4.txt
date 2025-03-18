@@ -1,61 +1,77 @@
-# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+# Individual project journal - Electricity price prediction Habo Plast
 
-Nom: Deepa Krishnan
-Numéro d'étudiant: 20XX101
+Name: Deepa Krishnan
+Student number: 20XX101
 
-## Semaine 1 (date: 05/02/2025)
+## Week 1 (date: 05/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai pris la responsabilité de la mise en place de l'infrastructure du projet, notamment la création du dépôt Git, l'organisation des fichiers et la définition des conventions de codage. J'ai également commencé à explorer les techniques de validation pour les séries temporelles, ce qui diffère des méthodes de validation croisée traditionnelles.
+### What I did this week
+I took responsibility for setting up the project infrastructure, including creating the Git repository, organizing files, and defining coding standards.
+I also started exploring validation techniques for time series, which differ from traditional cross-validation methods.
 
-### Ce que j'ai appris/mes réflexions
-J'ai appris l'importance d'une organisation rigoureuse dès le début d'un projet de data science. La validation des modèles de séries temporelles présente des défis spécifiques, notamment la nécessité de respecter l'ordre chronologique des données pour éviter les fuites d'information. J'ai également réfléchi à la manière dont les métriques d'évaluation doivent être adaptées au contexte de prédiction des prix.
+### What I learned/my thoughts
+I learned the importance of good organization from the beginning of a data science project.
+Validating time series models presents specific challenges, especially the need to respect the chronological order of data to avoid information leaks.
+I also thought about how evaluation metrics should be adapted to the context of price prediction.
 
-### Plan pour la semaine prochaine
-- Finaliser la structure du projet et les procédures de validation
-- Commencer à travailler sur la fonction de prédiction unifiée
-- Explorer les métriques d'évaluation appropriées pour notre problème
+### Plan for next week
+- Finalize the project structure and validation procedures
+- Start working on the unified prediction function
+- Explore appropriate evaluation metrics for our problem
 
-## Semaine 2 (date: 12/02/2025)
+## Week 2 (date: 12/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé la structure du projet et implémenté les procédures de validation en respectant l'ordre temporel des données. J'ai travaillé sur le développement du script principal qui orchestre l'ensemble du pipeline de traitement. J'ai également commencé à explorer les mécanismes de comparaison des modèles et à définir des métriques personnalisées pertinentes pour l'industrie.
+### What I did this week
+I finalized the project structure and implemented validation procedures respecting the time order of the data.
+I worked on developing the main script that orchestrates the entire processing pipeline.
+I also started exploring model comparison mechanisms and defining custom metrics relevant to industry.
 
-### Ce que j'ai appris/mes réflexions
-La mise en place d'un pipeline robuste est cruciale pour assurer la reproductibilité des résultats et faciliter l'itération sur les modèles. J'ai également découvert que, au-delà des métriques statistiques standard (RMSE, MAE, R²), il est important de considérer des métriques métier comme le coût économique des erreurs de prédiction, qui peuvent être asymétriques (sous-estimer le prix peut être plus coûteux que le surestimer, ou vice versa).
+### What I learned/my thoughts
+Setting up a robust pipeline is crucial for ensuring reproducibility of results and making it easier to iterate on models.
+I also discovered that, beyond standard statistical metrics (RMSE, MAE, R²), it's important to consider business metrics like the economic cost of prediction errors, which can be asymmetric (underestimating the price may be more costly than overestimating it, or vice versa).
 
-### Plan pour la semaine prochaine
-- Développer les scripts de comparaison des modèles
-- Implémenter la fonction de prédiction unifiée
-- Commencer à travailler sur la documentation technique
+### Plan for next week
+- Develop model comparison scripts
+- Implement the unified prediction function
+- Start working on technical documentation
 
-## Semaine 3 (date: 19/02/2025)
+## Week 3 (date: 19/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai développé les scripts de comparaison des modèles, permettant une évaluation systématique et équitable des différentes approches. J'ai implémenté la fonction de prédiction unifiée qui encapsule les trois modèles et peut fournir soit la prédiction du meilleur modèle, soit une moyenne pondérée. J'ai également commencé à rédiger la documentation technique et le manuel d'utilisation.
+### What I did this week
+I developed model comparison scripts, allowing systematic and fair evaluation of different approaches.
+I implemented the unified prediction function that encapsulates the three models and can provide either the best model's prediction or a weighted average.
+I also started writing technical documentation and the user manual.
 
-### Ce que j'ai appris/mes réflexions
-L'implémentation d'une fonction de prédiction unifiée m'a fait réfléchir aux compromis entre flexibilité et simplicité d'utilisation. J'ai également appris l'importance de tests rigoureux pour s'assurer que les modèles fonctionnent correctement dans différents scénarios. La comparaison des modèles a révélé des insights intéressants sur leurs forces et faiblesses respectives.
+### What I learned/my thoughts
+Implementing a unified prediction function made me think about the trade-offs between flexibility and ease of use.
+I also learned the importance of rigorous testing to ensure models work correctly in different scenarios.
+Model comparison revealed interesting insights about their respective strengths and weaknesses.
 
-### Plan pour la semaine prochaine
-- Finaliser la fonction de prédiction et la documentation
-- Contribuer à la rédaction du rapport final
-- Préparer des visualisations pour la présentation
+### Plan for next week
+- Finalize the prediction function and documentation
+- Contribute to writing the final report
+- Prepare visualizations for the presentation
 
-## Semaine 4 (date: 26/02/2025)
+## Week 4 (date: 26/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé la fonction de prédiction et élaboré une documentation complète expliquant son utilisation. J'ai contribué à la rédaction du rapport final, en particulier sur les aspects techniques et les résultats de la comparaison des modèles. J'ai également créé des visualisations interactives pour illustrer les prédictions des différents modèles par rapport aux valeurs réelles.
+### What I did this week
+I finalized the prediction function and created comprehensive documentation explaining its use.
+I contributed to writing the final report, particularly on technical aspects and model comparison results.
+I also created interactive visualizations to illustrate the predictions of different models compared to actual values.
 
-### Ce que j'ai appris/mes réflexions
-Cette dernière semaine m'a permis de consolider mes connaissances sur l'ensemble du processus de développement d'un modèle de prédiction. La création de visualisations efficaces est cruciale pour communiquer les résultats de manière convaincante. J'ai également réfléchi aux possibilités d'amélioration future et aux extensions possibles du projet.
+### What I learned/my thoughts
+This final week allowed me to consolidate my knowledge of the entire process of developing a prediction model.
+Creating effective visualizations is crucial for communicating results convincingly.
+I also thought about possibilities for future improvement and possible extensions of the project.
 
-### Plan pour la semaine prochaine
-- Finaliser tous les livrables du projet
-- Préparer la présentation finale
-- Réfléchir aux améliorations possibles pour des travaux futurs
+### Plan for next week
+- Finalize all project deliverables
+- Prepare the final presentation
+- Consider possible improvements for future work
 
-## Réflexion finale sur le projet
-Ce projet m'a donné une expérience précieuse dans la gestion d'un projet de data science de bout en bout, de la collecte et du prétraitement des données à la mise en œuvre de modèles avancés et à la présentation des résultats. J'ai particulièrement apprécié la collaboration interdisciplinaire, combinant des compétences en programmation, en statistiques et en connaissance du domaine.
+## Final reflection on the project
+This project gave me valuable experience in managing an end-to-end data science project, from data collection and preprocessing to implementing advanced models and presenting results.
+I particularly appreciated the interdisciplinary collaboration, combining skills in programming, statistics, and domain knowledge.
 
-La prédiction des prix de l'électricité est un problème complexe avec de nombreuses variables en jeu, et notre approche a montré qu'une combinaison de techniques traditionnelles et avancées peut donner d'excellents résultats. Pour des travaux futurs, je serais intéressé par l'intégration de données supplémentaires comme les prévisions de production d'énergie renouvelable et le développement d'un système de mise à jour continue du modèle pour s'adapter aux évolutions du marché.
+Electricity price prediction is a complex problem with many variables at play, and our approach showed that a combination of traditional and advanced techniques can give excellent results.
+For future work, I would be interested in integrating additional data such as renewable energy production forecasts and developing a continuous model update system to adapt to market changes.

@@ -1,89 +1,86 @@
-# Prédiction des Prix de l'Électricité pour Habo Plast: Une Approche par Apprentissage Automatique 
+# Electricity Price Prediction for Habo Plast: A Machine Learning Approach
 
-### Résumé 
+### Summary
 
-Ce projet vise à développer des modèles de prédiction des prix de l'électricité pour l'entreprise Habo Plast en utilisant des données météorologiques comme variables prédictives. Trois approches différentes d'apprentissage automatique ont été implémentées et comparées: la régression linéaire régularisée (Ridge), les méthodes d'ensemble (Random Forest) et les réseaux de neurones (MLP). Les modèles intègrent des caractéristiques météorologiques telles que la température, les précipitations, l'épaisseur de neige et l'ensoleillement, ainsi que des informations temporelles comme les prix antérieurs. Le modèle de régression Ridge a démontré une performance exceptionnelle avec un **R² de 0,998**, suivi du réseau de neurones (**R² de 0,975**) et du Random Forest (**R² de 0,815**). Cette étude démontre l'efficacité de l'apprentissage automatique pour la prédiction des prix de l'électricité, ce qui pourrait permettre à Habo Plast d'optimiser sa consommation énergétique et de réduire ses coûts opérationnels. 
+This project aims to develop electricity price prediction models for Habo Plast company using weather data as predictive variables. Three different machine learning approaches were tested and compared: regularized linear regression (Ridge), ensemble methods (Random Forest) and neural networks (MLP). The models use weather features such as temperature, rainfall, snow depth and sunshine, as well as time information like previous prices. The Ridge regression model showed excellent performance with an **R² of 0.998**, followed by the neural network (**R² of 0.975**) and Random Forest (**R² of 0.815**). This study shows how effective machine learning is for predicting electricity prices, which could help Habo Plast optimize its energy use and reduce operating costs.
 
-### I. Introduction 
+### I. Introduction
 
-#### A. Contexte 
+#### A. Background
 
-L'instabilité et la volatilité croissantes des prix de l'électricité posent des défis majeurs aux entreprises industrielles comme Habo Plast, qui dépendent fortement de l'énergie pour leurs opérations. Les fluctuations des prix de l'électricité sont influencées par de nombreux facteurs, notamment les conditions météorologiques qui affectent à la fois la production (particulièrement pour les énergies renouvelables) et la demande. En Suède, où le pays est divisé en quatre zones électriques (SE1, SE2, SE3 et SE4), les prix peuvent varier significativement selon les régions et les saisons. 
+The growing instability and changes in electricity prices create big challenges for industrial companies like Habo Plast, which need a lot of energy for their operations. Electricity price changes are affected by many factors, including weather conditions that impact both production (especially for renewable energy) and demand. In Sweden, where the country is divided into four electricity zones (SE1, SE2, SE3 and SE4), prices can vary a lot between regions and seasons.
 
-#### B. Problématique 
+#### B. Problem
 
-Pour les entreprises comme Habo Plast, prévoir les variations de prix de l'électricité représente un avantage stratégique considérable. Une prédiction fiable permettrait d'ajuster la production pendant les périodes où l'électricité est moins coûteuse, réduisant ainsi les dépenses opérationnelles. La question centrale devient donc: *comment prédire efficacement les prix de l'électricité en utilisant des données météorologiques et historiques?*
+For companies like Habo Plast, predicting electricity price changes gives a big strategic advantage. Reliable predictions would allow them to adjust production during times when electricity is cheaper, thus reducing operating costs. The main question becomes: *how can we effectively predict electricity prices using weather and historical data?*
 
-#### C. Objectifs du projet 
+#### C. Project Goals
 
-* Développer et évaluer trois modèles différents d'apprentissage automatique pour prédire les prix quotidiens de l'électricité dans la zone SE3 de Suède 
-* Identifier les variables météorologiques les plus influentes sur les prix de l'électricité 
-* Comparer les performances des différentes approches pour déterminer la plus adaptée au contexte de Habo Plast 
-* Fournir un outil de prédiction utilisable pour la planification stratégique de la production 
+* Develop and test three different machine learning models to predict daily electricity prices in the SE3 zone of Sweden
+* Identify which weather variables have the most influence on electricity prices
+* Compare how well the different approaches work to determine which is best for Habo Plast
+* Provide a prediction tool that can be used for strategic production planning
 
-### II. Revue de la littérature 
+### II. Literature Review
 
-#### A. Prédiction des prix de l'électricité: approches existantes 
+#### A. Electricity Price Prediction: Existing Approaches
 
-La prédiction des prix de l'électricité a fait l'objet de nombreuses recherches utilisant diverses méthodologies. Historiquement, les approches statistiques comme ARIMA (Auto-Regressive Integrated Moving Average) ont été largement utilisées pour les séries temporelles de prix énergétiques. Plus récemment, les techniques d'apprentissage automatique ont démontré des performances supérieures en raison de leur capacité à capturer des relations non linéaires complexes. 
+Electricity price prediction has been studied a lot using various methods. In the past, statistical approaches like ARIMA (Auto-Regressive Integrated Moving Average) were widely used for energy price time series. More recently, machine learning techniques have shown better results because they can capture complex non-linear relationships.
 
-Weron (2014) a proposé une classification des modèles de prédiction des prix de l'électricité en cinq catégories: modèles basés sur les agents, modèles de fondamentaux, modèles statistiques réduits, modèles statistiques complets et modèles d'intelligence artificielle. Notre approche se situe principalement dans les deux dernières catégories. 
+Weron (2014) suggested grouping electricity price prediction models into five types: agent-based models, fundamental models, reduced-form statistical models, full statistical models, and artificial intelligence models. Our approach falls mainly into the last two categories.
 
-#### B. Influence des facteurs météorologiques sur les prix 
+#### B. Influence of Weather Factors on Prices
 
-Plusieurs études ont démontré l'importance des variables météorologiques dans la prédiction des prix de l'électricité. González-Romera et al. (2019) ont montré que la température est particulièrement influente en raison de son impact sur la demande d'électricité pour le chauffage et la climatisation. De même, Panapakidis et Dagoumas (2016) ont observé que l'ensoleillement affecte significativement la production d'énergie solaire, et donc les prix, dans les marchés avec une forte pénétration de cette technologie. 
+Several studies have shown the importance of weather variables in predicting electricity prices. González-Romera et al. (2019) showed that temperature is particularly important because it affects electricity demand for heating and cooling. Similarly, Panapakidis and Dagoumas (2016) observed that sunshine significantly affects solar energy production, and therefore prices, in markets with a lot of this technology.
 
-En Suède, où l'hydroélectricité représente une part importante du mix énergétique, les précipitations et l'épaisseur de neige ont également un impact substantiel sur les prix, comme l'ont démontré Nohrstedt et al. (2021). 
+In Sweden, where hydroelectric power is a large part of the energy mix, rainfall and snow depth also have a big impact on prices, as shown by Nohrstedt et al. (2021).
 
-#### C. Applications de l'apprentissage automatique pour la prédiction énergétique 
+#### C. Machine Learning Applications for Energy Prediction
 
-Les algorithmes d'apprentissage automatique ont révolutionné la prédiction des prix de l'électricité. Les réseaux de neurones artificiels (ANN) ont été appliqués avec succès par Lago et al. (2018), tandis que Ziel et Weron (2018) ont exploité les avantages du gradient boosting pour obtenir des prédictions plus précises que les méthodes statistiques traditionnelles. 
+Machine learning algorithms have changed electricity price prediction. Artificial neural networks (ANN) have been successfully used by Lago et al. (2018), while Ziel and Weron (2018) used gradient boosting to get more accurate predictions than traditional statistical methods.
 
-Les méthodes d'ensemble, comme Random Forest, ont également prouvé leur efficacité dans ce domaine. Chen et al. (2020) ont combiné différents modèles pour améliorer la robustesse des prédictions face à la volatilité du marché. 
+Ensemble methods, like Random Forest, have also proven effective in this field. Chen et al. (2020) combined different models to improve the reliability of predictions despite market volatility.
 
-### III. Données et Méthodologie 
+### III. Data and Methodology
 
-#### A. Description des données 
+#### A. Data Description
 
-Notre étude s'appuie sur deux principales sources de données: 
+Our study uses two main data sources:
 
-Données de prix d'électricité: Séries temporelles des prix quotidiens de l'électricité dans la zone SE3 de Suède, couvrant la période de 2016 à 2024. Ces données proviennent de l'ENTSO-E (European Network of Transmission System Operators for Electricity). 
+Electricity price data: Time series of daily electricity prices in the SE3 zone of Sweden, covering the period from 2016 to 2024. This data comes from ENTSO-E (European Network of Transmission System Operators for Electricity).
 
-**Données météorologiques: Collectées auprès de SMHI (Institut suédois de météorologie et d'hydrologie) et comprenant:**
+**Weather data: Collected from SMHI (Swedish Meteorological and Hydrological Institute) and includes:**
 
-* Température de l'air (moyenne quotidienne) 
-* Précipitations (somme sur 24h) 
-* Épaisseur de neige (mesure quotidienne) 
-* Durée d'ensoleillement (heures par jour) 
+* Air temperature (daily average)
+* Rainfall (24-hour total)
+* Snow depth (daily measurement)
+* Sunshine duration (hours per day)
 
-Les données météorologiques ont été agrégées à partir de multiples stations de mesure situées dans la zone électrique SE3 pour obtenir des valeurs représentatives de la région. 
+The weather data was combined from multiple measuring stations located in the SE3 electricity zone to get values that represent the region.
 
-#### B. Prétraitement des données 
+#### B. Data Preprocessing
 
-Le prétraitement des données a impliqué plusieurs étapes: 
+Data preprocessing involved several steps:
 
-Nettoyage des données: Suppression des valeurs aberrantes et traitement des valeurs manquantes par imputation (méthode forward fill). 
+Data cleaning: Removing outliers and handling missing values by imputation (forward fill method).
 
-**Création de caractéristiques:**
+**Feature creation:**
 
-* Variables temporelles: mois, jour de la semaine, saison 
-* Variables retardées: prix des 7 jours précédents (Price_lag_1 à Price_lag_7) 
-* Moyennes mobiles: prix moyens et température moyenne sur les 7 derniers jours 
-* Fusion des ensembles de données: Alignement des données météorologiques et de prix par date. 
-* Normalisation: Application d'un StandardScaler pour normaliser toutes les caractéristiques numériques, assurant ainsi que chaque variable contribue équitablement aux modèles. 
-* Division des données: Partition en ensembles d'entraînement (80%) et de test (20%) en préservant l'ordre chronologique pour respecter la nature temporelle des données. 
+* Time variables: month, day of the week, season
+* Lagged variables: prices from the previous 7 days (Price_lag_1 to Price_lag_7)
+* Moving averages: average prices and average temperature over the last 7 days
+* Merging datasets: Aligning weather and price data by date.
+* Normalization: Using a StandardScaler to normalize all numerical features, ensuring each variable contributes equally to the models.
+* Data splitting: Dividing into training (80%) and test (20%) sets while keeping the time order to respect the temporal nature of the data.
 
-#### C. Développement des modèles 
+#### C. Model Development
 
-##### 1. Modèle 1: Régression linéaire avec régularisation (Ridge) 
+##### 1. Model 1: Linear Regression with Regularization (Ridge)
 
-La régression Ridge est une technique qui ajoute un terme de pénalité (régularisation L2) à la fonction de coût de la régression linéaire standard. Cette approche aide à prévenir le surapprentissage en contrôlant la magnitude des coefficients. 
+Ridge regression is a technique that adds a penalty term (L2 regularization) to the cost function of standard linear regression. This approach helps prevent overfitting by controlling the size of the coefficients.
 
- 
 
- 
 
- 
 ```Python
 from sklearn.linear_model 
 
@@ -92,12 +89,11 @@ import Ridge ridge_model = Ridge(alpha=1.0)
 ridge_model.fit(X_train, y_train)
 ```
 
+The alpha parameter controls the strength of regularization, with higher values causing greater penalty for high coefficients.
 
-Le paramètre alpha contrôle l'intensité de la régularisation, avec des valeurs plus élevées entraînant une plus grande pénalisation des coefficients élevés. 
+##### 2. Model 2: Random Forest
 
-##### 2. Modèle 2: Random Forest 
-
-Random Forest est une méthode d'ensemble qui construit de multiples arbres de décision et combine leurs prédictions. Chaque arbre est entraîné sur un sous-ensemble aléatoire des données et des caractéristiques, ce qui réduit la variance et améliore la généralisation. 
+Random Forest is an ensemble method that builds multiple decision trees and combines their predictions. Each tree is trained on a random subset of the data and features, which reduces variance and improves generalization.
 
 ```Python
 from sklearn.ensemble import RandomForestRegressor 
@@ -108,153 +104,147 @@ rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
 rf_model.fit(X_train, y_train)
 ```
 
-Nous avons utilisé **100 arbres** (n_estimators=100) pour garantir une bonne robustesse du modèle. 
+We used **100 trees** (n_estimators=100) to ensure good model robustness.
 
-##### 3. Modèle 3: Perceptron multicouche (MLP) 
+##### 3. Model 3: Multi-layer Perceptron (MLP)
 
-Le MLP est un type de réseau de neurones artificiels composé de plusieurs couches de neurones. Notre architecture comprend: 
+The MLP is a type of artificial neural network made up of several layers of neurons. Our architecture includes:
 
-1. Une couche d'entrée correspondant au nombre de caractéristiques 
-1. Deux couches cachées avec activation ReLU (64 et 32 neurones) 
-1. Des couches de dropout (taux de 0.2) pour réduire le surapprentissage 
-1. Une couche de sortie linéaire pour la prédiction du prix 
-
- 
+1. An input layer corresponding to the number of features
+1. Two hidden layers with ReLU activation (64 and 32 neurons)
+1. Dropout layers (rate of 0.2) to reduce overfitting
+1. A linear output layer for price prediction
 
 ```Python
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout mlp_model = Sequential([ Dense(64, activation='relu', input_dim=X_train.shape[1]), Dropout(0.2), Dense(32, activation='relu'), Dropout(0.2), Dense(16, activation='relu'), Dense(1) ]) mlp_model.compile(loss='mse', optimizer='adam')
 ```
 
+Training was done with the Adam optimizer and early stopping to avoid overfitting.
 
- 
+##### D. Model Evaluation
 
-L'entraînement a été réalisé avec l'optimiseur Adam et un early stopping pour éviter le surapprentissage. 
+To evaluate the performance of the models, we used several metrics:
 
-##### D. Évaluation des modèles 
+Mean Squared Error (MSE): Measures the average squared error between predictions and actual values
 
-Pour évaluer les performances des modèles, nous avons utilisé plusieurs métriques: 
+Root Mean Squared Error (RMSE): Square root of MSE, expressed in the same unit as the target variable (EUR/MWh)
 
-Mean Squared Error (MSE): Mesure l'erreur quadratique moyenne entre les prédictions et les valeurs réelles 
+Mean Absolute Error (MAE): Average of absolute errors, less sensitive to extreme values
 
-Root Mean Squared Error (RMSE): Racine carrée du MSE, exprimée dans la même unité que la variable cible (EUR/MWh) 
+Coefficient of determination (R²): Proportion of variance explained by the model, ranging from 0 to 1 (1 being a perfect prediction)
 
-Mean Absolute Error (MAE): Moyenne des erreurs absolues, moins sensible aux valeurs extrêmes 
+### IV. Results and Discussion
 
-Coefficient de détermination (R²): Proportion de la variance expliquée par le modèle, variant de 0 à 1 (1 étant une prédiction parfaite) 
+#### A. Comparative Model Performance
 
-### IV. Résultats et Discussion 
+The evaluation results of the three models on the test set are presented in the following table:
 
-#### A. Performance comparative des modèles 
+ ![Capture d'écran 2025-03-17 à 15.58.21](./result.png)
 
-Les résultats de l'évaluation des trois modèles sur l'ensemble de test sont présentés dans le tableau suivant: 
+The Ridge regression model showed exceptional performance with an R² of 0.9987, indicating that it explains almost perfectly the variance in the test data. This performance is significantly better than that of the MLP (R² = 0.9755) and Random Forest (R² = 0.8152).
 
- ![Capture d’écran 2025-03-17 à 15.58.21](./result.png)
+The RMSE, which measures the typical difference between predicted and actual values, is also much lower for the Ridge model (1.7242 EUR/MWh) compared to other models. This means that Ridge predictions are on average closer to the actual values.
 
+#### B. Analysis of Important Features
 
-Le modèle de régression Ridge a démontré une performance exceptionnelle avec un R² de 0.9987, indiquant qu'il explique presque parfaitement la variance dans les données de test. Cette performance est significativement supérieure à celle du MLP (R² = 0.9755) et du Random Forest (R² = 0.8152). 
-
-Le RMSE, qui mesure l'écart typique entre les valeurs prédites et réelles, est également nettement plus bas pour le modèle Ridge (1.7242 EUR/MWh) comparé aux autres modèles. Cela signifie que les prédictions de Ridge sont en moyenne plus proches des valeurs réelles. 
-
-#### B. Analyse des caractéristiques importantes 
-
-L'analyse des coefficients du modèle Ridge et des importances de caractéristiques du Random Forest révèle que: 
+Analysis of the Ridge model coefficients and Random Forest feature importances reveals that:
 
 ![correlation_matrix](./results/correlation_matrix.png)
 
-Variables de prix retardées: Les prix des jours précédents, en particulier Price_lag_1 (prix de la veille) et Price_MA7 (moyenne mobile sur 7 jours), sont les prédicteurs les plus influents. Cela confirme la forte autocorrélation temporelle des prix de l'électricité. 
+Lagged price variables: Prices from previous days, especially Price_lag_1 (previous day's price) and Price_MA7 (7-day moving average), are the most influential predictors. This confirms the strong temporal autocorrelation of electricity prices.
 
-Variables météorologiques: Parmi les facteurs météorologiques, la température et l'ensoleillement ont un impact plus significatif que les précipitations et l'épaisseur de neige. La température influence directement la demande d'électricité (chauffage en hiver, climatisation en été), tandis que l'ensoleillement affecte la production d'énergie solaire. 
+Weather variables: Among weather factors, temperature and sunshine have a more significant impact than rainfall and snow depth. Temperature directly influences electricity demand (heating in winter, cooling in summer), while sunshine affects solar energy production.
 
-Variables saisonnières: La saison et le mois sont également des prédicteurs importants, reflétant les variations saisonnières systématiques des prix de l'électricité. 
+Seasonal variables: Season and month are also important predictors, reflecting systematic seasonal variations in electricity prices.
 
-#### C. Interprétation des résultats 
+#### C. Interpretation of Results
 
-La performance exceptionnelle du modèle Ridge peut s'expliquer par: 
+The exceptional performance of the Ridge model can be explained by:
 
 ![model_predictions_comparison](./results/model_predictions_comparison.png)
 
-Structure linéaire des relations: Bien que les prix de l'électricité soient influencés par de multiples facteurs, leurs relations peuvent être largement capturées par un modèle linéaire, surtout lorsque des variables retardées sont incluses. 
+Linear structure of relationships: Although electricity prices are influenced by multiple factors, their relationships can be largely captured by a linear model, especially when lagged variables are included.
 
-Efficacité de la régularisation: La régularisation Ridge a efficacement prévenu le surapprentissage tout en permettant au modèle de capturer les relations complexes entre les variables. 
+Effectiveness of regularization: Ridge regularization effectively prevented overfitting while allowing the model to capture complex relationships between variables.
 
-Pertinence des caractéristiques temporelles: L'inclusion des prix historiques a fortement augmenté la capacité prédictive du modèle, car les prix de l'électricité suivent souvent des tendances et des cycles prévisibles. 
+Relevance of temporal features: Including historical prices greatly increased the predictive capacity of the model, as electricity prices often follow predictable trends and cycles.
 
-Le modèle MLP a également montré d'excellentes performances, mais sa complexité supplémentaire n'a pas apporté d'améliorations significatives par rapport à la régression Ridge. Cela suggère que pour ce problème spécifique, les relations non linéaires complexes que le MLP peut capturer n'offrent qu'un avantage marginal. 
+The MLP model also showed excellent performance, but its additional complexity did not bring significant improvements compared to Ridge regression. This suggests that for this specific problem, the complex non-linear relationships that the MLP can capture offer only a marginal advantage.
 
-La performance relativement plus faible du Random Forest pourrait être attribuée à sa tendance à surajuster certains aspects des données, même si sa capacité à capturer des interactions non linéaires reste précieuse. 
+The relatively lower performance of Random Forest could be attributed to its tendency to overfit certain aspects of the data, even though its ability to capture non-linear interactions remains valuable.
 
-#### D. Limitations 
+#### D. Limitations
 
-Malgré les excellentes performances observées, notre étude présente certaines limitations: 
+Despite the excellent performance observed, our study has some limitations:
 
-Dépendance aux données historiques: Les modèles reposent fortement sur les prix historiques, ce qui pourrait limiter leur efficacité lors de changements brusques ou d'événements sans précédent sur le marché. 
+Dependence on historical data: The models rely heavily on historical prices, which could limit their effectiveness during sudden changes or unprecedented market events.
 
-Facteurs non météorologiques: Notre approche n'intègre pas certains facteurs influents comme les politiques énergétiques, les pannes d'infrastructure ou les conditions géopolitiques qui peuvent affecter les prix. 
+Non-weather factors: Our approach does not incorporate some influential factors such as energy policies, infrastructure failures, or geopolitical conditions that can affect prices.
 
-Spécificité régionale: Les modèles sont spécifiques à la zone SE3 de Suède et pourraient ne pas être directement transférables à d'autres marchés avec des dynamiques différentes. 
+Regional specificity: The models are specific to the SE3 zone of Sweden and might not be directly transferable to other markets with different dynamics.
 
-### V. Conclusion et Perspectives 
+### V. Conclusion and Future Work
 
-#### A. Synthèse des résultats 
+#### A. Summary of Results
 
-Ce projet a démontré l'efficacité de l'apprentissage automatique pour la prédiction des prix de l'électricité en Suède. Nos principales conclusions sont: 
+This project has demonstrated the effectiveness of machine learning for predicting electricity prices in Sweden. Our main findings are:
 
-La régression Ridge a surpassé les autres modèles avec une précision remarquable (R² = 0.9987), démontrant que même des approches relativement simples peuvent exceller dans la prédiction des prix de l'électricité lorsque les caractéristiques pertinentes sont incluses. 
+Ridge regression outperformed other models with remarkable accuracy (R² = 0.9987), showing that even relatively simple approaches can excel in predicting electricity prices when relevant features are included.
 
-Les variables de prix historiques constituent les prédicteurs les plus puissants, suivies par les variables météorologiques, en particulier la température et l'ensoleillement. 
+Historical price variables are the most powerful predictors, followed by weather variables, particularly temperature and sunshine.
 
-L'approche d'ensemble, combinant les trois modèles, n'a pas amélioré les performances par rapport au meilleur modèle individuel (Ridge), mais pourrait offrir une plus grande robustesse face à des données nouvelles ou inhabituelles. 
+The ensemble approach, combining the three models, did not improve performance compared to the best individual model (Ridge), but could offer greater robustness with new or unusual data.
 
-#### B. Implications pour Habo Plast 
+#### B. Implications for Habo Plast
 
-Pour Habo Plast, ces résultats offrent plusieurs avantages pratiques: 
+For Habo Plast, these results offer several practical benefits:
 
-Optimisation de la production: L'entreprise pourrait ajuster ses cycles de production en fonction des prévisions de prix, intensifiant les opérations énergivores pendant les périodes de prix bas. 
+Production optimization: The company could adjust its production cycles based on price forecasts, intensifying energy-intensive operations during low-price periods.
 
-Planification budgétaire: Des prévisions précises permettent une meilleure estimation des coûts énergétiques futurs, facilitant la planification financière. 
+Budget planning: Accurate forecasts allow better estimation of future energy costs, facilitating financial planning.
 
-Stratégies d'achat d'électricité: Les prédictions pourraient guider les décisions d'achat d'électricité sur les marchés à terme ou spot. 
+Electricity purchasing strategies: Predictions could guide electricity purchase decisions in forward or spot markets.
 
-#### C. Travaux futurs 
+#### C. Future Work
 
-Plusieurs pistes peuvent être explorées pour améliorer davantage ce travail: 
+Several paths can be explored to further improve this work:
 
-Intégration de variables supplémentaires: Incorporer des données sur la production d'énergie renouvelable, la demande nationale, ou les prix des combustibles pourrait enrichir les modèles. 
+Integration of additional variables: Incorporating data on renewable energy production, national demand, or fuel prices could enrich the models.
 
-Prédiction à différentes échelles temporelles: Développer des modèles pour des prédictions horaires ou hebdomadaires en plus des prédictions quotidiennes. 
+Prediction at different time scales: Developing models for hourly or weekly predictions in addition to daily predictions.
 
-Exploration de modèles avancés: Tester des architectures plus sophistiquées comme les réseaux LSTM (Long Short-Term Memory) qui sont spécialement conçus pour les séries temporelles. 
+Exploration of advanced models: Testing more sophisticated architectures like LSTM (Long Short-Term Memory) networks that are specially designed for time series.
 
-Système d'alerte: Développer un système automatisé alertant Habo Plast lorsque des variations significatives de prix sont prévues, permettant une réaction rapide. 
+Alert system: Developing an automated system alerting Habo Plast when significant price variations are predicted, allowing quick reaction.
 
-Extension à d'autres zones électriques: Adapter les modèles pour prédire les prix dans d'autres zones électriques de Suède, offrant une vision plus complète du marché national. 
+Extension to other electricity zones: Adapting the models to predict prices in other electricity zones of Sweden, offering a more complete view of the national market.
 
-### VI. Références 
+### VI. References
 
-Voici une liste de références que vous pourriez inclure (à compléter/adapter selon les sources réellement utilisées dans votre projet): 
+Here is a list of references you could include (to be completed/adapted according to sources actually used in your project):
 
-Weron, R. (2014). "Electricity price forecasting: A review of the state-of-the-art with a look into the future." International Journal of Forecasting, 30(4), 1030-1081. 
+Weron, R. (2014). "Electricity price forecasting: A review of the state-of-the-art with a look into the future." International Journal of Forecasting, 30(4), 1030-1081.
 
-González-Romera, E., Jaramillo-Morán, M. Á., & Carmona-Fernández, D. (2019). "Monthly electric energy demand forecasting with neural networks and Fourier series." Energy Conversion and Management, 169, 238-247. 
+González-Romera, E., Jaramillo-Morán, M. Á., & Carmona-Fernández, D. (2019). "Monthly electric energy demand forecasting with neural networks and Fourier series." Energy Conversion and Management, 169, 238-247.
 
-Lago, J., De Ridder, F., & De Schutter, B. (2018). "Forecasting spot electricity prices: Deep learning approaches and empirical comparison of traditional algorithms." Applied Energy, 221, 386-405. 
+Lago, J., De Ridder, F., & De Schutter, B. (2018). "Forecasting spot electricity prices: Deep learning approaches and empirical comparison of traditional algorithms." Applied Energy, 221, 386-405.
 
-Panapakidis, I. P., & Dagoumas, A. S. (2016). "Day-ahead electricity price forecasting via the application of artificial neural network based models." Applied Energy, 172, 132-151. 
+Panapakidis, I. P., & Dagoumas, A. S. (2016). "Day-ahead electricity price forecasting via the application of artificial neural network based models." Applied Energy, 172, 132-151.
 
-Ziel, F., & Weron, R. (2018). "Day-ahead electricity price forecasting with high-dimensional structures: Univariate vs. multivariate modeling frameworks." Energy Economics, 70, 396-420. 
+Ziel, F., & Weron, R. (2018). "Day-ahead electricity price forecasting with high-dimensional structures: Univariate vs. multivariate modeling frameworks." Energy Economics, 70, 396-420.
 
-Chen, K., Chen, K., Wang, Q., He, Z., Hu, J., & He, J. (2020). "Short-term load forecasting with deep residual networks." IEEE Transactions on Smart Grid, 10(4), 3943-3952. 
+Chen, K., Chen, K., Wang, Q., He, Z., Hu, J., & He, J. (2020). "Short-term load forecasting with deep residual networks." IEEE Transactions on Smart Grid, 10(4), 3943-3952.
 
-Nohrstedt, D., Johansson, J., Parker, C. F., & 't Hart, P. (2021). "Managing crises collaboratively: Prospects and problems—A systematic literature review." Perspectives on Public Management and Governance, 4(3), 257-271. 
+Nohrstedt, D., Johansson, J., Parker, C. F., & 't Hart, P. (2021). "Managing crises collaboratively: Prospects and problems—A systematic literature review." Perspectives on Public Management and Governance, 4(3), 257-271.
 
-### Annexes 
+### Appendices
 
-Annexe A: Code source du projet 
+Appendix A: Project Source Code
 
 https://github.com/CogalTek/Epitech42---ML
 
-Annexe B: Visualisations supplémentaires 
+Appendix B: Additional Visualizations
 
 ![comparison_MAE](./results/comparison_MAE.png)
 ![comparison_MSE](./results/comparison_MSE.png)
@@ -270,6 +260,6 @@ Annexe B: Visualisations supplémentaires
 ![cost_optimization_habo_plast](./interpretation/cost_optimization_habo_plast.png)
 ![feature_importance_habo_plast](./interpretation/feature_importance_habo_plast.png)
 
-Annexe C: Tableau détaillé des caractéristiques utilisées 
+Appendix C: Detailed Table of Features Used
 
-[Inclure ici un tableau explicatif de toutes les caractéristiques avec leur description et importance relative] 
+[Include here an explanatory table of all features with their description and relative importance]

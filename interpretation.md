@@ -1,33 +1,37 @@
-Analyse des résultats et implications pour Habo Plast
-Résultats des modèles prédictifs
+Analysis of Results and Implications for Habo Plast
+Results of Predictive Models
 
-Notre étude a comparé trois approches différentes pour prédire les prix de l'électricité en zone SE3, avec les performances suivantes sur l'ensemble de test:
+Our study compared three different approaches to predict electricity prices in the SE3 zone, with the following performances on the test set:
 
-ModèleR²RMSE (EUR/MWh)MAE (EUR/MWh)Ridge Regression0.99871.72420.9641Random Forest0.815220.919510.5179MLP Neural Network0.97557.62314.8921Ensemble (moyenne)0.96339.32865.0203
+Model               R²      RMSE (EUR/MWh)  MAE (EUR/MWh)
+Ridge Regression    0.9987  1.7242          0.9641
+Random Forest       0.8152  20.9195         10.5179
+MLP Neural Network  0.9755  7.6231          4.8921
+Ensemble (average)  0.9633  9.3286          5.0203
 
-Interprétation des résultats pour Habo Plast
-Précision exceptionnelle du modèle Ridge
+Understanding the Results for Habo Plast
+Very Good Accuracy of the Ridge Model
 
-Le modèle Ridge a démontré une précision remarquable avec un R² de 0.9987 et une erreur moyenne (MAE) de seulement 0.96 EUR/MWh. Pour Habo Plast, cela se traduit par une capacité de prévoir les coûts d'électricité avec une marge d'erreur de moins de 1 EUR/MWh, soit environ 2% du prix moyen.
-Facteurs d'influence clés identifiés
-L'analyse d'importance des caractéristiques révèle que:
+The Ridge model showed very good accuracy with an R² of 0.9987 and an average error (MAE) of only 0.96 EUR/MWh. For Habo Plast, this means they can predict electricity costs with an error of less than 1 EUR/MWh, which is about 2% of the average price.
+Key Factors We Found
+The feature importance analysis shows that:
 
-1) Prix historiques récents: Les prix des jours précédents (surtout Price_lag_1 et Price_MA7) sont les indicateurs les plus puissants
-2) Température: Principal facteur météorologique influençant les prix
-3) Heures d'ensoleillement: Deuxième facteur météorologique en importance
-4) Saisonnalité: Les tendances mensuelles et saisonnières ont un impact significatif
+1) Recent price history: The prices from previous days (especially Price_lag_1 and Price_MA7) are the strongest indicators
+2) Temperature: Main weather factor affecting prices
+3) Sunshine hours: Second most important weather factor
+4) Seasons: Monthly and seasonal trends have a big impact
 
-Implications concrètes pour Habo Plast
+What This Means for Habo Plast
 
-1) Optimisation de la production: En utilisant ce modèle, Habo Plast peut planifier ses opérations les plus énergivores pendant les périodes de prix bas, avec une confiance élevée dans les prédictions. Pour un site consommant environ 500 MWh par mois, cela pourrait représenter une économie de 15,000-20,000 EUR annuellement.
-2) Planification budgétaire: La haute précision du modèle permet d'estimer les coûts énergétiques futurs avec une fiabilité accrue, facilitant la planification financière à moyen terme.
-3) Stratégie d'achat d'électricité: Les prédictions peuvent guider les décisions d'achat sur les marchés à terme, permettant de sécuriser des prix avantageux lorsque le modèle prévoit des hausses.
-4) Gestion des pics de prix: Le modèle peut identifier à l'avance les périodes de pics de prix, permettant à Habo Plast d'ajuster sa consommation et d'éviter les tarifs les plus élevés. Sur un marché où les prix peuvent varier de 20 à 200 EUR/MWh, cette capacité d'anticipation est précieuse.
+1) Better Production Planning: Using this model, Habo Plast can plan their most energy-using operations during times when prices are low, with high trust in the predictions. For a site using about 500 MWh per month, this could save 15,000-20,000 EUR yearly.
+2) Budget Planning: The high accuracy of the model allows better estimates of future energy costs, making financial planning easier.
+3) Electricity Buying Strategy: The predictions can help decide when to buy electricity in the markets, allowing Habo Plast to get good prices when the model predicts increases.
+4) Managing Price Spikes: The model can identify times of high prices in advance, allowing Habo Plast to adjust their usage and avoid the highest rates. In a market where prices can range from 20 to 200 EUR/MWh, this ability to predict is valuable.
 
-Valeur ajoutée du modèle d'apprentissage automatique
-Par rapport aux méthodes traditionnelles de prévision, notre modèle offre:
+Benefits of the Machine Learning Model
+Compared to old ways of forecasting, our model offers:
 
-- Une précision supérieure (erreur moyenne inférieure à 1 EUR/MWh)
-- La capacité d'intégrer des variables météorologiques complexes
-- Une actualisation facile avec de nouvelles données
-- Des possibilités d'automatisation pour la planification de la production
+- Better accuracy (average error less than 1 EUR/MWh)
+- The ability to use complex weather data
+- Easy updates with new data
+- Ways to automate production planning

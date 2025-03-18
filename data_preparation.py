@@ -1,5 +1,5 @@
 # data_preparation.py
-# À placer à la racine de votre repo
+# To be placed at the root of your repo
 
 import pandas as pd
 import numpy as np
@@ -11,93 +11,93 @@ import joblib
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-# Charger les données de prix d'électricité
+# Load electricity price data
 def load_electricity_data():
-    # Choisir les fichiers de la zone SE3 (puisque les données météo concernent SE3)
+    # Choose files from the SE3 zone (since weather data concerns SE3)
     electricity_files = [f for f in os.listdir('./habo_plast/electricity') if f.startswith('SE3_') and f.endswith('entsoe.csv')]
     
-    print(f"Fichiers trouvés: {electricity_files}")
+    print(f"Files found: {electricity_files}")
     
     dfs = []
     for file in electricity_files:
         try:
             df = pd.read_csv(f'./habo_plast/electricity/{file}')
-            # Examiner la structure du fichier
-            if dfs == []:  # seulement pour le premier fichier
-                print(f"Premières lignes de {file}:")
+            # Examine the file structure
+            if dfs == []:  # only for the first file
+                print(f"First lines of {file}:")
                 print(df.head())
-                print(f"Types de données: {df.dtypes}")
+                print(f"Data types: {df.dtypes}")
             
-            # S'assurer que la colonne de prix est numérique
+            # Make sure the price column is numeric
             if 'Day-ahead Price [EUR/MWh]' in df.columns:
-                # Vérifier si la colonne contient des valeurs non numériques
+                # Check if the column contains non-numeric values
                 try:
                     df['Day-ahead Price [EUR/MWh]'] = pd.to_numeric(df['Day-ahead Price [EUR/MWh]'], errors='coerce')
-                    print(f"Conversion numérique réussie pour {file}")
+                    print(f"Successful numeric conversion for {file}")
                 except Exception as e:
-                    print(f"Erreur lors de la conversion en numérique: {e}")
-                    # Afficher quelques valeurs problématiques
-                    print("Exemples de valeurs dans la colonne prix:")
+                    print(f"Error during numeric conversion: {e}")
+                    # Display some problematic values
+                    print("Examples of values in the price column:")
                     print(df['Day-ahead Price [EUR/MWh]'].iloc[:5].tolist())
             
             dfs.append(df)
         except Exception as e:
-            print(f"Erreur lors de la lecture du fichier {file}: {e}")
+            print(f"Error reading file {file}: {e}")
     
-    # Concaténer tous les fichiers
+    # Concatenate all files
     electricity_df = pd.concat(dfs, ignore_index=True)
     
-    # Convertir les dates
+    # Convert dates
     try:
-        # Si le format est "DD.MM.YYYY HH:MM - DD.MM.YYYY HH:MM"
+        # If the format is "DD.MM.YYYY HH:MM - DD.MM.YYYY HH:MM"
         electricity_df['Date'] = electricity_df['MTU (CET/CEST)'].apply(
             lambda x: pd.to_datetime(x.split(' - ')[0], format='%d.%m.%Y %H:%M')
         )
     except Exception as e:
-        print(f"Erreur lors de la conversion des dates: {e}")
-        return pd.DataFrame()  # Retourner un DataFrame vide en cas d'erreur
+        print(f"Error converting dates: {e}")
+        return pd.DataFrame()  # Return an empty DataFrame in case of error
     
-    # Agréger par jour pour correspondre aux données météo quotidiennes
+    # Aggregate by day to match daily weather data
     electricity_df['Day'] = electricity_df['Date'].dt.date
     
-    # S'assurer que la colonne de prix est numérique avant l'agrégation
-    print("Vérification finale des types de données avant l'agrégation:")
+    # Make sure the price column is numeric before aggregation
+    print("Final verification of data types before aggregation:")
     print(electricity_df.dtypes)
     
-    # Utiliser une méthode plus robuste pour l'agrégation
+    # Use a more robust method for aggregation
     try:
-        # Filtrer les valeurs non numériques
+        # Filter non-numeric values
         electricity_df = electricity_df[pd.to_numeric(electricity_df['Day-ahead Price [EUR/MWh]'], errors='coerce').notna()]
         electricity_df['Day-ahead Price [EUR/MWh]'] = pd.to_numeric(electricity_df['Day-ahead Price [EUR/MWh]'])
         
-        # Grouper et calculer la moyenne
+        # Group and calculate the average
         daily_electricity = electricity_df.groupby('Day')['Day-ahead Price [EUR/MWh]'].mean().reset_index()
         daily_electricity.rename(columns={'Day-ahead Price [EUR/MWh]': 'Price'}, inplace=True)
     except Exception as e:
-        print(f"Erreur lors de l'agrégation: {e}")
+        print(f"Error during aggregation: {e}")
         
-        # Alternative: traiter manuellement chaque groupe
+        # Alternative: manually process each group
         unique_days = electricity_df['Day'].unique()
         prices = []
         
         for day in unique_days:
             day_data = electricity_df[electricity_df['Day'] == day]
             try:
-                # Convertir en numérique et ignorer les valeurs non convertibles
+                # Convert to numeric and ignore non-convertible values
                 numeric_prices = pd.to_numeric(day_data['Day-ahead Price [EUR/MWh]'], errors='coerce')
                 avg_price = numeric_prices.mean()
                 prices.append({'Day': day, 'Price': avg_price})
             except Exception as e_inner:
-                print(f"Erreur pour le jour {day}: {e_inner}")
+                print(f"Error for day {day}: {e_inner}")
         
         daily_electricity = pd.DataFrame(prices)
     
-    print("Données de prix quotidiens traitées avec succès.")
+    print("Daily price data processed successfully.")
     return daily_electricity
 
-# Charger les données météorologiques
+# Load weather data
 def load_weather_data():
-    # Température (paramètre 2)
+    # Temperature (parameter 2)
     temp_files = [f for f in os.listdir('./habo_plast/smhi_data_2022-today/parameter_2') if f.endswith('.csv')]
     temp_dfs = []
     
@@ -107,16 +107,16 @@ def load_weather_data():
             df['station'] = file.split('-')[0].replace('station_', '')
             temp_dfs.append(df)
         except:
-            print(f"Problème avec le fichier température: {file}")
+            print(f"Problem with temperature file: {file}")
     
     temp_df = pd.concat(temp_dfs, ignore_index=True)
     temp_df['Date'] = pd.to_datetime(temp_df['Datum'])
     
-    # Calculer la température moyenne par jour sur toutes les stations
+    # Calculate average daily temperature across all stations
     temp_daily = temp_df.groupby('Date')['Lufttemperatur'].mean().reset_index()
     temp_daily.rename(columns={'Lufttemperatur': 'Temperature'}, inplace=True)
     
-    # Précipitations (paramètre 5)
+    # Precipitation (parameter 5)
     precip_files = [f for f in os.listdir('./habo_plast/smhi_data_2022-today/parameter_5') if f.endswith('.csv')]
     precip_dfs = []
     
@@ -126,16 +126,16 @@ def load_weather_data():
             df['station'] = file.split('-')[0].replace('station_', '')
             precip_dfs.append(df)
         except:
-            print(f"Problème avec le fichier précipitation: {file}")
+            print(f"Problem with precipitation file: {file}")
     
     precip_df = pd.concat(precip_dfs, ignore_index=True)
     precip_df['Date'] = pd.to_datetime(precip_df['Datum'])
     
-    # Calculer les précipitations moyennes par jour sur toutes les stations
+    # Calculate average daily precipitation across all stations
     precip_daily = precip_df.groupby('Date')['Nederbördsmängd'].mean().reset_index()
     precip_daily.rename(columns={'Nederbördsmängd': 'Precipitation'}, inplace=True)
     
-    # Épaisseur de neige (paramètre 8)
+    # Snow depth (parameter 8)
     snow_files = [f for f in os.listdir('./habo_plast/smhi_data_2022-today/parameter_8') if f.endswith('.csv')]
     snow_dfs = []
     
@@ -145,16 +145,16 @@ def load_weather_data():
             df['station'] = file.split('-')[0].replace('station_', '')
             snow_dfs.append(df)
         except:
-            print(f"Problème avec le fichier neige: {file}")
+            print(f"Problem with snow file: {file}")
     
     snow_df = pd.concat(snow_dfs, ignore_index=True)
     snow_df['Date'] = pd.to_datetime(snow_df['Datum'])
     
-    # Calculer l'épaisseur de neige moyenne par jour sur toutes les stations
+    # Calculate average daily snow depth across all stations
     snow_daily = snow_df.groupby('Date')['Snödjup'].mean().reset_index()
     snow_daily.rename(columns={'Snödjup': 'SnowDepth'}, inplace=True)
     
-    # Durée d'ensoleillement (paramètre 10) - Agrégation par jour
+    # Sunshine duration (parameter 10) - Aggregation by day
     sun_files = [f for f in os.listdir('./habo_plast/smhi_data_2022-today/parameter_10') if f.endswith('.csv')]
     sun_dfs = []
     
@@ -164,100 +164,100 @@ def load_weather_data():
             df['station'] = file.split('-')[0].replace('station_', '')
             sun_dfs.append(df)
         except:
-            print(f"Problème avec le fichier ensoleillement: {file}")
+            print(f"Problem with sunshine file: {file}")
     
     sun_df = pd.concat(sun_dfs, ignore_index=True)
     sun_df['Date'] = pd.to_datetime(sun_df['Datum'])
     
-    # Convertir en heures si en minutes et agréger par jour
-    sun_df['Solskenstid'] = sun_df['Solskenstid'] / 60  # Convertir en heures si en minutes
+    # Convert to hours if in minutes and aggregate by day
+    sun_df['Solskenstid'] = sun_df['Solskenstid'] / 60  # Convert to hours if in minutes
     sun_daily = sun_df.groupby(['Date', 'station'])['Solskenstid'].sum().reset_index()
     sun_daily = sun_daily.groupby('Date')['Solskenstid'].mean().reset_index()
     sun_daily.rename(columns={'Solskenstid': 'SunshineHours'}, inplace=True)
     
-    # Fusionner toutes les données météo
+    # Merge all weather data
     weather_df = temp_daily.merge(precip_daily, on='Date', how='outer')
     weather_df = weather_df.merge(snow_daily, on='Date', how='outer')
     weather_df = weather_df.merge(sun_daily, on='Date', how='outer')
     
-    # Convertir la date au même format que les données d'électricité
+    # Convert date to the same format as electricity data
     weather_df['Day'] = weather_df['Date'].dt.date
     weather_df = weather_df.drop('Date', axis=1)
     
     return weather_df
 
 def prepare_data():
-    # Fusionner les données d'électricité et météo
-    print("Chargement des données d'électricité...")
+    # Merge electricity and weather data
+    print("Loading electricity data...")
     electricity_data = load_electricity_data()
-    print("Chargement des données météorologiques...")
+    print("Loading weather data...")
     weather_data = load_weather_data()
 
-    print("Fusion des données...")
+    print("Merging data...")
     merged_data = electricity_data.merge(weather_data, on='Day', how='inner')
 
-    # Gérer les valeurs manquantes
-    print("Traitement des valeurs manquantes...")
-    merged_data = merged_data.fillna(method='ffill')  # Forward fill pour les données manquantes
-    merged_data = merged_data.dropna()  # Supprimer les lignes restantes avec des valeurs manquantes
+    # Handle missing values
+    print("Processing missing values...")
+    merged_data = merged_data.fillna(method='ffill')  # Forward fill for missing data
+    merged_data = merged_data.dropna()  # Remove remaining rows with missing values
 
-    # Convertir 'Day' en datetime et extraire les caractéristiques de date
-    print("Création de caractéristiques supplémentaires...")
+    # Convert 'Day' to datetime and extract date features
+    print("Creating additional features...")
     merged_data['Day'] = pd.to_datetime(merged_data['Day'])
     merged_data['Month'] = merged_data['Day'].dt.month
     merged_data['DayOfWeek'] = merged_data['Day'].dt.dayofweek
-    merged_data['Season'] = merged_data['Day'].dt.month % 12 // 3 + 1  # 1: Hiver, 2: Printemps, 3: Été, 4: Automne
+    merged_data['Season'] = merged_data['Day'].dt.month % 12 // 3 + 1  # 1: Winter, 2: Spring, 3: Summer, 4: Fall
 
-    # Variables retardées (prix des jours précédents)
-    for i in range(1, 8):  # Ajouter les prix des 7 jours précédents
+    # Lagged variables (prices from previous days)
+    for i in range(1, 8):  # Add prices from the previous 7 days
         merged_data[f'Price_lag_{i}'] = merged_data['Price'].shift(i)
 
-    # Variables moyennes mobiles
+    # Moving average variables
     merged_data['Price_MA7'] = merged_data['Price'].rolling(window=7).mean()
     merged_data['Temp_MA7'] = merged_data['Temperature'].rolling(window=7).mean()
 
-    # Supprimer les premières lignes qui ont des NaN en raison des variables retardées
+    # Remove first rows that have NaN due to lagged variables
     merged_data = merged_data.dropna()
 
-    # Explorer les corrélations - EXCLURE les colonnes non numériques
-    print("Analyse des corrélations...")
-    # Sélectionner uniquement les colonnes numériques pour la corrélation
+    # Explore correlations - EXCLUDE non-numeric columns
+    print("Analyzing correlations...")
+    # Select only numeric columns for correlation
     numeric_columns = merged_data.select_dtypes(include=[np.number]).columns
     correlation_matrix = merged_data[numeric_columns].corr()
     
     plt.figure(figsize=(12, 10))
     sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', linewidths=0.5)
-    plt.title('Corrélation entre les variables')
+    plt.title('Correlation between variables')
     plt.savefig('./results/correlation_matrix.png')
     plt.close()
 
-    # Préparation des données pour les modèles
-    # Exclure 'Day' qui est maintenant un datetime
+    # Data preparation for models
+    # Exclude 'Day' which is now a datetime
     X = merged_data.drop(['Day', 'Price'], axis=1)
-    # S'assurer que toutes les colonnes sont numériques
+    # Make sure all columns are numeric
     X = X.select_dtypes(include=[np.number])
     y = merged_data['Price']
 
-    # Normalisation des données
-    print("Normalisation des données...")
+    # Data normalization
+    print("Normalizing data...")
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
-    # Diviser les données en ensembles d'entraînement et de test
-    print("Division des données en ensembles d'entraînement et de test...")
+    # Split data into training and test sets
+    print("Splitting data into training and test sets...")
     X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-    # Créer le répertoire results s'il n'existe pas
+    # Create the results directory if it doesn't exist
     if not os.path.exists('./results'):
         os.makedirs('./results')
     
-    # Créer le répertoire models s'il n'existe pas
+    # Create the models directory if it doesn't exist
     if not os.path.exists('./models'):
         os.makedirs('./models')
 
-    # Sauvegarde pour utilisation ultérieure
-    print("Sauvegarde des données préparées...")
-    # Créer le répertoire data s'il n'existe pas
+    # Save for later use
+    print("Saving prepared data...")
+    # Create the data directory if it doesn't exist
     if not os.path.exists('./data'):
         os.makedirs('./data')
         
@@ -266,25 +266,25 @@ def prepare_data():
     np.save('./data/y_train.npy', y_train)
     np.save('./data/y_test.npy', y_test)
     
-    # Sauvegarde du scaler pour une utilisation future
+    # Save the scaler for future use
     joblib.dump(scaler, './models/scaler.pkl')
 
-    # Sauvegarde des noms de colonnes pour référence
+    # Save column names for reference
     with open('./data/feature_names.txt', 'w') as f:
         for column in X.columns:
             f.write(f"{column}\n")
     
-    # Sauvegarde des données fusionnées pour référence
-    # Convertir Day en string pour éviter les problèmes de sérialisation
+    # Save the merged data for reference
+    # Convert Day to string to avoid serialization issues
     merged_data_to_save = merged_data.copy()
     merged_data_to_save['Day'] = merged_data_to_save['Day'].dt.strftime('%Y-%m-%d')
     merged_data_to_save.to_csv('./data/merged_data.csv', index=False)
     
-    print("Préparation des données terminée.")
+    print("Data preparation completed.")
     return X_train, X_test, y_train, y_test, X.columns
 
 if __name__ == "__main__":
-    # Créer le répertoire data s'il n'existe pas
+    # Create the data directory if it doesn't exist
     if not os.path.exists('./data'):
         os.makedirs('./data')
     

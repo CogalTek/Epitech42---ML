@@ -1,61 +1,79 @@
-# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+# Individual project journal - Electricity price prediction Habo Plast
 
-Nom: Mathieu Rio
-Numéro d'étudiant: 20XX456
+Name: Mathieu Rio
+Student number: 20XX456
 
-## Semaine 1 (date: 05/02/2025)
+## Week 1 (date: 05/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai pris la responsabilité de l'exploration des données météorologiques de SMHI. J'ai examiné la structure des fichiers pour les différents paramètres (température, précipitations, neige, ensoleillement) et évalué la couverture des stations dans la zone SE3. J'ai également commencé à développer le script pour extraire et prétraiter ces données.
+### What I did this week
+I took responsibility for exploring the SMHI weather data.
+I examined the file structure for different parameters (temperature, precipitation, snow, sunshine) and evaluated station coverage in the SE3 zone.
+I also started developing the script to extract and preprocess this data.
 
-### Ce que j'ai appris/mes réflexions
-Les données météorologiques présentent des défis spécifiques : formats inconsistants entre les paramètres, valeurs manquantes fréquentes, et différentes fréquences d'échantillonnage. J'ai appris à gérer ces problèmes en utilisant des techniques appropriées de prétraitement. J'ai également été surpris par la quantité de stations disponibles et la diversité des paramètres mesurés.
+### What I learned/my thoughts
+Weather data presents specific challenges: inconsistent formats between parameters, frequent missing values, and different sampling frequencies.
+I learned to handle these problems using appropriate preprocessing techniques.
+I was also surprised by the number of available stations and the diversity of measured parameters.
 
-### Plan pour la semaine prochaine
-- Finaliser le script de prétraitement des données météorologiques
-- Créer des visualisations pour explorer les relations entre variables météo et prix
-- Commencer à construire un pipeline d'intégration des données
+### Plan for next week
+- Finish the weather data preprocessing script
+- Create visualizations to explore relationships between weather variables and prices
+- Start building a data integration pipeline
 
-## Semaine 2 (date: 12/02/2025)
+## Week 2 (date: 12/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé le script de prétraitement des données météorologiques et créé des visualisations pour explorer les corrélations. J'ai travaillé avec Emma pour fusionner les données météo avec les données de prix. J'ai également commencé à développer le modèle Random Forest et à explorer différentes configurations d'hyperparamètres.
+### What I did this week
+I finished the weather data preprocessing script and created visualizations to explore correlations.
+I worked with Emma to merge the weather data with the price data.
+I also started developing the Random Forest model and exploring different hyperparameter configurations.
 
-### Ce que j'ai appris/mes réflexions
-Les analyses de corrélation ont révélé des relations intéressantes : la température a l'impact le plus fort sur les prix, suivie par l'ensoleillement. Les précipitations et l'épaisseur de neige ont des effets plus modérés mais toujours significatifs. J'ai également appris l'importance de l'agrégation spatiale appropriée des données météorologiques pour obtenir des valeurs représentatives de la région.
+### What I learned/my thoughts
+Correlation analyses revealed interesting relationships: temperature has the strongest impact on prices, followed by sunshine.
+Precipitation and snow depth have more moderate but still significant effects.
+I also learned the importance of proper spatial aggregation of weather data to get values that represent the region.
 
-### Plan pour la semaine prochaine
-- Optimiser les hyperparamètres du modèle Random Forest
-- Explorer différentes techniques de sélection de caractéristiques
-- Commencer à documenter les résultats du modèle
+### Plan for next week
+- Optimize the Random Forest model hyperparameters
+- Explore different feature selection techniques
+- Start documenting the model results
 
-## Semaine 3 (date: 19/02/2025)
+## Week 3 (date: 19/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai travaillé sur l'optimisation du modèle Random Forest en utilisant une recherche en grille pour les hyperparamètres. J'ai implémenté une analyse d'importance des caractéristiques pour comprendre quelles variables avaient le plus d'impact sur les prédictions. J'ai également commencé à rédiger la section du rapport concernant le modèle Random Forest.
+### What I did this week
+I worked on optimizing the Random Forest model using grid search for hyperparameters.
+I implemented a feature importance analysis to understand which variables had the most impact on predictions.
+I also started writing the report section about the Random Forest model.
 
-### Ce que j'ai appris/mes réflexions
-L'optimisation des hyperparamètres a amélioré les performances du modèle, mais pas autant que je l'espérais. J'ai découvert que les variables retardées (prix des jours précédents) dominaient largement l'importance des caractéristiques, ce qui est logique mais pose des questions sur l'utilité réelle des variables météorologiques dans ce contexte.
+### What I learned/my thoughts
+Hyperparameter optimization improved the model performance, but not as much as I hoped.
+I discovered that lagged variables (prices from previous days) largely dominated the feature importance, which makes sense but raises questions about the real usefulness of weather variables in this context.
 
-### Plan pour la semaine prochaine
-- Finaliser l'évaluation du modèle Random Forest
-- Contribuer à la comparaison globale des modèles
-- Continuer la rédaction du rapport
+### Plan for next week
+- Finalize the Random Forest model evaluation
+- Contribute to the overall model comparison
+- Continue writing the report
 
-## Semaine 4 (date: 26/02/2025)
+## Week 4 (date: 26/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé l'évaluation du modèle Random Forest et contribué à la comparaison des trois modèles. J'ai été surpris de voir que le modèle Ridge surpassait le Random Forest, ce qui m'a amené à faire des analyses supplémentaires pour comprendre pourquoi. J'ai également participé à la création du modèle d'ensemble et à l'évaluation de sa performance.
+### What I did this week
+I finalized the Random Forest model evaluation and contributed to the comparison of the three models.
+I was surprised to see that the Ridge model outperformed Random Forest, which led me to do additional analyses to understand why.
+I also participated in creating the ensemble model and evaluating its performance.
 
-### Ce que j'ai appris/mes réflexions
-Cette dernière semaine m'a permis de comprendre l'importance de l'interprétabilité des modèles. Bien que le Random Forest n'ait pas obtenu les meilleures performances, il offre une perspective précieuse sur l'importance relative des différentes variables. J'ai également appris que la complexité d'un modèle n'est pas toujours corrélée à sa performance.
+### What I learned/my thoughts
+This last week helped me understand the importance of model interpretability.
+Although Random Forest didn't get the best performance, it offers valuable insight into the relative importance of different variables.
+I also learned that a model's complexity is not always correlated with its performance.
 
-### Plan pour la semaine prochaine
-- Finaliser la documentation du code
-- Contribuer aux dernières révisions du rapport
-- Préparer la démonstration des modèles pour la présentation finale
+### Plan for next week
+- Finalize code documentation
+- Contribute to final report revisions
+- Prepare the model demonstration for the final presentation
 
-## Réflexion finale sur le projet
-Ce projet a été une excellente opportunité d'appliquer des techniques d'apprentissage automatique à un problème réel avec des implications économiques concrètes. La prédiction des prix de l'électricité est un domaine fascinant qui combine des éléments de séries temporelles, de météorologie et d'économie.
+## Final reflection on the project
+This project was an excellent opportunity to apply machine learning techniques to a real problem with concrete economic implications.
+Electricity price prediction is a fascinating field that combines elements of time series, meteorology, and economics.
 
-J'ai particulièrement apprécié le travail sur le modèle Random Forest et l'analyse d'importance des caractéristiques, qui a fourni des insights précieux sur les facteurs influençant les prix. La collaboration avec l'équipe a été enrichissante, chacun apportant ses compétences spécifiques. Pour des travaux futurs, j'aimerais explorer davantage les modèles hybrides qui combinent les avantages de différentes approches.
+I particularly enjoyed working on the Random Forest model and feature importance analysis, which provided valuable insights into factors influencing prices.
+Collaboration with the team was enriching, with everyone bringing their specific skills.
+For future work, I would like to further explore hybrid models that combine the advantages of different approaches.

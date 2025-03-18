@@ -1,66 +1,75 @@
-## Journaux de Projet Individuels
+# Individual project journal - Electricity price prediction Habo Plast
 
-### Journal 1: Rémi Maigrot
+Name: Rémi Maigrot
+Student number: 20XX123
 
-```markdown
-# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+## Week 1 (date: 05/02/2025)
 
-Nom: Rémi Maigrot
-Numéro d'étudiant: 20XX123
+### What I did this week
+This first week, I worked on understanding the problem and collecting data.
+I explored the ENTSO-E electricity price files for the SE3 zone and analyzed their structure.
+I also joined the project kickoff meeting with our group, where we defined roles and goals.
 
-## Semaine 1 (date: 05/02/2025)
+### What I learned/my thoughts
+I discovered how complex the Swedish electricity market is and how prices change across different areas.
+The CSV files contain hourly information that we need to combine into daily data. I also learned how to handle large CSV files with pandas, which helped me better understand data structures.
 
-### Ce que j'ai fait cette semaine
-Cette première semaine, j'ai travaillé sur la compréhension du problème et la collecte des données. J'ai exploré les fichiers de prix d'électricité de l'ENTSO-E pour la zone SE3 et analysé leur structure. J'ai également participé à la réunion de lancement du projet avec notre groupe, où nous avons défini les rôles et les objectifs.
+### Plan for next week
+- Finish the script for loading electricity price data
+- Start the exploratory data analysis
+- Explore correlations between prices and time variables (day of week, month, etc.)
 
-### Ce que j'ai appris/mes réflexions
-J'ai découvert la complexité du marché de l'électricité suédois et comment les prix varient selon les zones géographiques. Les fichiers CSV contiennent des informations horaires que nous devrons agréger en données quotidiennes. J'ai également appris à manipuler des fichiers CSV volumineux avec pandas, ce qui m'a permis de mieux comprendre les structures de données.
+## Week 2 (date: 12/02/2025)
 
-### Plan pour la semaine prochaine
-- Finaliser le script de chargement des données de prix d'électricité
-- Commencer l'analyse exploratoire des données
-- Explorer les corrélations entre les prix et les variables temporelles (jour de la semaine, mois, etc.)
+### What I did this week
+I finished the price data preprocessing script and started working on exploratory analysis. I created several visualizations to understand price trends and seasonality. I also added weather data to our dataset, making sure the dates were properly aligned.
 
-## Semaine 2 (date: 12/02/2025)
+### What I learned/my thoughts
+The data analysis showed clear seasonal trends in electricity prices, with peaks in winter and lows in summer.
+I also found a strong connection between temperature and prices.
+Combining data from different sources was more complicated than expected, mainly because of differences in date formats.
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé le script de prétraitement des données de prix et j'ai commencé à travailler sur l'analyse exploratoire. J'ai créé plusieurs visualisations pour comprendre les tendances et la saisonnalité des prix. J'ai également intégré les données météorologiques dans notre ensemble de données, en veillant à ce que les dates soient correctement alignées.
+### Plan for next week
+- Create additional features (lag features, moving averages)
+- Prepare the data for training the models
+- Document the data preprocessing process
 
-### Ce que j'ai appris/mes réflexions
-L'analyse des données a révélé des tendances saisonnières claires dans les prix de l'électricité, avec des pics en hiver et des creux en été. J'ai également découvert une forte corrélation entre la température et les prix. Le processus de fusion des données de différentes sources a été plus complexe que prévu, notamment en raison des différences de format de date.
+## Week 3 (date: 19/02/2025)
 
-### Plan pour la semaine prochaine
-- Créer des caractéristiques supplémentaires (lag features, moyennes mobiles)
-- Préparer les données pour l'entraînement des modèles
-- Documenter le processus de prétraitement des données
+### What I did this week
+This week, I worked on creating advanced features for the models, especially lagged variables and moving averages.
+I also helped implement the Ridge regression model and evaluate its initial performance.
+I started writing the "Data and Methodology" section of the report.
 
-## Semaine 3 (date: 19/02/2025)
+### What I learned/my thoughts
+Creating lagged variables greatly improved the model's performance. I was surprised by how effective the Ridge model was despite being relatively simple. I also learned the importance of normalizing features for regularized regression models.
 
-### Ce que j'ai fait cette semaine
-Cette semaine, j'ai travaillé sur la création de caractéristiques avancées pour les modèles, notamment les variables retardées (lag) et les moyennes mobiles. J'ai aussi participé à l'implémentation du modèle de régression Ridge et à l'évaluation de ses performances initiales. J'ai commencé à rédiger la section "Données et Méthodologie" du rapport.
+### Plan for next week
+- Finalize the Ridge model performance analysis
+- Contribute to the model comparison
+- Continue writing the report
 
-### Ce que j'ai appris/mes réflexions
-La création de variables retardées a considérablement amélioré les performances du modèle. J'ai été surprise par l'efficacité du modèle Ridge malgré sa simplicité relative. J'ai également appris l'importance de la normalisation des caractéristiques pour les modèles de régression régularisée.
+## Week 4 (date: 26/02/2025)
 
-### Plan pour la semaine prochaine
-- Finaliser l'analyse des performances du modèle Ridge
-- Contribuer à la comparaison des modèles
-- Continuer la rédaction du rapport
+### What I did this week
+I finalized the Ridge model performance analysis and contributed to the comparison with other models. 
+I also helped create the final visualizations for the report and wrote the "Results" and "Conclusion" sections. 
+I helped organize the code and prepare the documentation.
 
-## Semaine 4 (date: 26/02/2025)
+### What I learned/my thoughts
+Comparing the models was very educational. 
+I was impressed by the excellent performance of the Ridge model, which outperformed more complex methods like Random Forest and MLP.
+This reminded me of the importance of not always rushing to the most complex models before testing simpler approaches.
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé l'analyse des performances du modèle Ridge et contribué à la comparaison avec les autres modèles. J'ai également participé à la création des visualisations finales pour le rapport et à la rédaction des sections "Résultats" et "Conclusion". J'ai aidé à organiser le code et à préparer la documentation.
+### Plan for next week
+- Finalize the report
+- Prepare the project presentation
+- Review and comment the code for final submission
 
-### Ce que j'ai appris/mes réflexions
-La comparaison des modèles a été très instructive. J'ai été impressionnée par les excellentes performances du modèle Ridge, qui a surpassé des méthodes plus complexes comme le Random Forest et le MLP. Cela m'a rappelé l'importance de ne pas toujours se précipiter vers les modèles les plus complexes avant d'avoir testé des approches plus simples.
+## Final reflection on the project
+This project allowed me to apply machine learning techniques to a real and relevant problem.
+I particularly enjoyed working on data preparation and exploratory analysis, which are often the most crucial but neglected steps in data science projects.
+I also learned the importance of collaboration and clear communication within a team.
 
-### Plan pour la semaine prochaine
-- Finaliser le rapport
-- Préparer la présentation du projet
-- Réviser et commenter le code pour la soumission finale
-
-## Réflexion finale sur le projet
-Ce projet m'a permis d'appliquer des techniques d'apprentissage automatique à un problème concret et pertinent. J'ai particulièrement apprécié le travail sur la préparation des données et l'analyse exploratoire, qui sont souvent les étapes les plus cruciales mais négligées dans les projets de science des données. J'ai également appris l'importance de la collaboration et de la communication claire au sein d'une équipe.
-
-La découverte que le modèle Ridge fonctionnait si bien a été une leçon importante sur le principe de parcimonie en modélisation. À l'avenir, je souhaiterais explorer davantage l'intégration d'autres variables explicatives, comme les données de production d'énergie renouvelable ou la demande nationale d'électricité.
+The discovery that the Ridge model worked so well was an important lesson about the principle of simplicity in modeling.
+In the future, I would like to explore more the integration of other explanatory variables, such as renewable energy production data or national electricity demand.

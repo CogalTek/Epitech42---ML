@@ -1,60 +1,77 @@
-# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+# Individual project journal - Electricity price prediction Habo Plast
 
-Nom: Loshma Latha Babu
-Numéro d'étudiant: 20XX202
+Name: Loshma Latha Babu
+Student number: 20XX202
 
-## Semaine 1 (date: 05/02/2025)
+## Week 1 (date: 05/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai pris en charge l'analyse du contexte industriel et des besoins spécifiques de Habo Plast en matière de prédiction des prix de l'électricité. J'ai recherché des informations sur l'industrie plastique et ses exigences énergétiques, ainsi que sur le fonctionnement du marché de l'électricité en Suède. J'ai également participé à la définition des objectifs du projet et à l'élaboration du plan de travail.
+### What I did this week
+I took charge of analyzing the industrial context and specific needs of Habo Plast regarding electricity price prediction.
+I researched information about the plastic industry and its energy requirements, as well as how the electricity market works in Sweden.
+I also helped define the project goals and develop the work plan.
 
-### Ce que j'ai appris/mes réflexions
-J'ai découvert que l'industrie plastique est particulièrement sensible aux coûts énergétiques, qui peuvent représenter jusqu'à 20% des coûts opérationnels. La Suède, avec son système de zones de prix, présente un marché électrique complexe où les prix peuvent varier considérablement selon les régions et les saisons. Cette compréhension du contexte est essentielle pour développer un modèle vraiment utile pour Habo Plast.
+### What I learned/my thoughts
+I discovered that the plastic industry is very sensitive to energy costs, which can represent up to 20% of operating costs.
+Sweden, with its price zone system, has a complex electricity market where prices can vary greatly by region and season.
+This understanding of the context is essential to develop a truly useful model for Habo Plast.
 
-### Plan pour la semaine prochaine
-- Analyser les implications économiques des erreurs de prédiction
-- Commencer à explorer les relations entre les prix de l'électricité et les variables économiques
-- Contribuer à la définition des métriques d'évaluation pertinentes
+### Plan for next week
+- Analyze the economic implications of prediction errors
+- Start exploring relationships between electricity prices and economic variables
+- Contribute to defining relevant evaluation metrics
 
-## Semaine 2 (date: 12/02/2025)
+## Week 2 (date: 12/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai analysé les implications économiques des erreurs de prédiction pour Habo Plast et développé un cadre pour évaluer l'impact financier des différents types d'erreurs. J'ai également commencé à explorer les relations entre les prix de l'électricité et diverses variables économiques, bien que nous ayons décidé de nous concentrer principalement sur les variables météorologiques pour ce projet. J'ai contribué à la définition des métriques d'évaluation, en mettant l'accent sur leur pertinence pour l'industrie.
+### What I did this week
+I analyzed the economic implications of prediction errors for Habo Plast and developed a framework to evaluate the financial impact of different types of errors.
+I also started exploring relationships between electricity prices and various economic variables, although we decided to focus mainly on weather variables for this project.
+I contributed to defining evaluation metrics, emphasizing their relevance to industry.
 
-### Ce que j'ai appris/mes réflexions
-L'analyse économique a révélé que pour Habo Plast, sous-estimer les prix de l'électricité peut être plus coûteux que les surestimer, car cela peut conduire à des décisions de production non optimales. J'ai également appris que les relations entre les prix de l'électricité et les variables économiques sont complexes et souvent influencées par des politiques gouvernementales et des facteurs géopolitiques qui sont difficiles à intégrer dans un modèle.
+### What I learned/my thoughts
+The economic analysis revealed that for Habo Plast, underestimating electricity prices can be more costly than overestimating them, as it can lead to non-optimal production decisions.
+I also learned that relationships between electricity prices and economic variables are complex and often influenced by government policies and geopolitical factors that are difficult to include in a model.
 
-### Plan pour la semaine prochaine
-- Commencer à rédiger l'introduction et le contexte du rapport
-- Contribuer à l'interprétation des résultats préliminaires des modèles
-- Explorer les implications pratiques des prédictions pour Habo Plast
+### Plan for next week
+- Start writing the introduction and context of the report
+- Contribute to interpreting preliminary model results
+- Explore practical implications of predictions for Habo Plast
 
-## Semaine 3 (date: 19/02/2025)
+## Week 3 (date: 19/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai rédigé l'introduction et le contexte du rapport, en mettant l'accent sur la pertinence du projet pour Habo Plast et l'industrie plastique en général. J'ai également contribué à l'interprétation des résultats préliminaires des modèles, en évaluant leur utilité pratique pour la planification de la production. J'ai commencé à élaborer des recommandations sur la façon dont Habo Plast pourrait intégrer ces prédictions dans ses processus décisionnels.
+### What I did this week
+I wrote the introduction and context of the report, emphasizing the relevance of the project for Habo Plast and the plastic industry in general.
+I also helped interpret preliminary model results, evaluating their practical usefulness for production planning.
+I started developing recommendations on how Habo Plast could integrate these predictions into their decision-making processes.
 
-### Ce que j'ai appris/mes réflexions
-L'interprétation des résultats des modèles m'a fait réaliser l'importance de la communication claire des prédictions et de leurs incertitudes aux décideurs. Un modèle parfait sur le plan statistique peut être inutile s'il n'est pas compréhensible ou utilisable par les personnes qui doivent prendre des décisions basées sur ses prédictions. J'ai également réfléchi à la manière dont les prédictions pourraient être intégrées dans un système d'aide à la décision plus large.
+### What I learned/my thoughts
+Interpreting model results made me realize the importance of clearly communicating predictions and their uncertainties to decision-makers.
+A statistically perfect model can be useless if it's not understandable or usable by the people who need to make decisions based on its predictions.
+I also thought about how predictions could be integrated into a larger decision support system.
 
-### Plan pour la semaine prochaine
-- Finaliser les implications pratiques et les recommandations
-- Contribuer à la rédaction de la conclusion
+### Plan for next week
+- Finalize practical implications and recommendations
+- Contribute to writing the conclusion
 
-## Semaine 4 (date: 26/02/2025)
+## Week 4 (date: 26/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé la section sur les implications pratiques et les recommandations pour Habo Plast, en détaillant comment l'entreprise pourrait utiliser le modèle de prédiction pour optimiser sa consommation énergétique. J'ai également contribué à la rédaction de la conclusion du rapport et à la préparation de la présentation finale. J'ai collaboré avec l'ensemble de l'équipe pour assurer la cohérence du rapport et vérifier que nos recommandations sont basées sur des résultats solides.
+### What I did this week
+I finalized the section on practical implications and recommendations for Habo Plast, detailing how the company could use the prediction model to optimize its energy consumption.
+I also contributed to writing the report conclusion and preparing the final presentation.
+I collaborated with the entire team to ensure report consistency and verify that our recommendations are based on solid results.
 
-### Ce que j'ai appris/mes réflexions
-Cette dernière semaine a renforcé mon appréciation de l'importance de traduire les résultats techniques en recommandations pratiques et actionnables. J'ai également appris l'importance de la communication claire et concise des résultats complexes à un public non technique. En examinant l'ensemble du projet, j'ai été impressionnée par la façon dont des modèles relativement simples peuvent fournir des informations précieuses pour des décisions commerciales importantes.
+### What I learned/my thoughts
+This final week strengthened my appreciation for the importance of translating technical results into practical and actionable recommendations.
+I also learned the importance of clearly and concisely communicating complex results to a non-technical audience.
+Looking at the whole project, I was impressed by how relatively simple models can provide valuable information for important business decisions.
 
-### Plan pour la semaine prochaine
-- Préparer la présentation finale du projet
-- Recueillir les commentaires sur nos recommandations
-- Réfléchir aux possibilités d'extension du projet
+### Plan for next week
+- Prepare the final project presentation
+- Gather feedback on our recommendations
+- Consider possibilities for extending the project
 
-## Réflexion finale sur le projet
-Ce projet a été une excellente occasion d'appliquer des techniques d'apprentissage automatique à un problème industriel concret avec des implications économiques significatives. J'ai particulièrement apprécié de pouvoir combiner des aspects techniques (modélisation, analyse de données) avec des considérations commerciales (implications pour Habo Plast, recommandations pratiques).
+## Final reflection on the project
+This project was an excellent opportunity to apply machine learning techniques to a concrete industrial problem with significant economic implications.
+I particularly appreciated being able to combine technical aspects (modeling, data analysis) with business considerations (implications for Habo Plast, practical recommendations).
 
-L'excellent résultat du modèle Ridge montre qu'une approche relativement simple peut être très efficace lorsqu'elle est appliquée avec une bonne compréhension du problème et des données de qualité. Pour l'avenir, je serais intéressée par l'exploration de l'intégration de ce modèle dans un système plus large d'optimisation de la production, qui pourrait prendre en compte non seulement les prix de l'électricité, mais aussi d'autres facteurs comme la demande de produits, les coûts des matières premières et les contraintes de capacité.
+The excellent result of the Ridge model shows that a relatively simple approach can be very effective when applied with a good understanding of the problem and quality data.
+For the future, I would be interested in exploring the integration of this model into a larger production optimization system, which could take into account not only electricity prices, but also other factors such as product demand, raw material costs, and capacity constraints.

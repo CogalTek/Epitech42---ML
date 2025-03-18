@@ -1,61 +1,79 @@
-# Journal de projet individuel - Prédiction des prix de l'électricité Habo Plast
+# Individual project journal - Electricity price prediction Habo Plast
 
-Nom: Arthur Bourdin
-Numéro d'étudiant: 20XX789
+Name: Arthur Bourdin
+Student number: 20XX789
 
-## Semaine 1 (date: 05/02/2025)
+## Week 1 (date: 05/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai pris en charge la revue de littérature sur les techniques de prédiction des prix de l'électricité. J'ai recherché des articles académiques et des études de cas pertinentes pour nous aider à définir notre méthodologie. J'ai également participé à la définition du cadre conceptuel du projet et à l'identification des variables potentiellement importantes.
+### What I did this week
+I took charge of the literature review on electricity price prediction techniques.
+I researched academic articles and relevant case studies to help us define our methodology.
+I also helped define the project's conceptual framework and identify potentially important variables.
 
-### Ce que j'ai appris/mes réflexions
-La littérature sur la prédiction des prix de l'électricité est riche et diverse. J'ai découvert que les approches vont des modèles économétriques traditionnels aux techniques d'apprentissage profond les plus avancées. J'ai été particulièrement intéressée par l'impact des variables météorologiques sur les prix, qui varie considérablement selon les régions et les structures de marché.
+### What I learned/my thoughts
+The literature on electricity price prediction is rich and diverse.
+I discovered that approaches range from traditional econometric models to the most advanced deep learning techniques.
+I was particularly interested in the impact of weather variables on prices, which varies considerably depending on regions and market structures.
 
-### Plan pour la semaine prochaine
-- Synthétiser les principales conclusions de la revue de littérature
-- Commencer à explorer la structure des données et les techniques de visualisation
-- Contribuer à la conception de l'architecture du réseau de neurones
+### Plan for next week
+- Summarize the main findings from the literature review
+- Start exploring data structure and visualization techniques
+- Contribute to the design of the neural network architecture
 
-## Semaine 2 (date: 12/02/2025)
+## Week 2 (date: 12/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé la synthèse de la revue de littérature et commencé à travailler sur la conception du réseau de neurones MLP. J'ai exploré différentes architectures et techniques de régularisation pour éviter le surapprentissage. J'ai également collaboré avec Emma et Anders sur l'analyse exploratoire des données et la création de nouvelles caractéristiques.
+### What I did this week
+I finalized the literature review summary and started working on the design of the MLP neural network.
+I explored different architectures and regularization techniques to avoid overfitting.
+I also collaborated with Emma and Anders on exploratory data analysis and creating new features.
 
-### Ce que j'ai appris/mes réflexions
-La conception d'une architecture de réseau appropriée est un défi qui nécessite à la fois des connaissances théoriques et une expérimentation pratique. J'ai appris l'importance de l'early stopping et du dropout pour prévenir le surapprentissage, ainsi que l'impact du choix des fonctions d'activation sur les performances du modèle.
+### What I learned/my thoughts
+Designing an appropriate network architecture is a challenge that requires both theoretical knowledge and practical experimentation.
+I learned the importance of early stopping and dropout to prevent overfitting, as well as the impact of activation function choice on model performance.
 
-### Plan pour la semaine prochaine
-- Implémenter et entraîner le modèle MLP
-- Évaluer ses performances sur les données de validation
-- Expérimenter avec différentes configurations d'hyperparamètres
+### Plan for next week
+- Implement and train the MLP model
+- Evaluate its performance on validation data
+- Experiment with different hyperparameter configurations
 
-## Semaine 3 (date: 19/02/2025)
+## Week 3 (date: 19/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai implémenté le modèle MLP avec TensorFlow et Keras, et j'ai entraîné plusieurs versions avec différentes configurations. J'ai analysé les courbes d'apprentissage pour détecter les signes de surapprentissage et ajusté les hyperparamètres en conséquence. J'ai également commencé à expérimenter avec un modèle LSTM pour capturer les dépendances temporelles.
+### What I did this week
+I implemented the MLP model with TensorFlow and Keras, and trained several versions with different configurations.
+I analyzed the learning curves to detect signs of overfitting and adjusted hyperparameters accordingly.
+I also began experimenting with an LSTM model to capture temporal dependencies.
 
-### Ce que j'ai appris/mes réflexions
-L'entraînement du modèle MLP a révélé que même une architecture relativement simple peut capturer efficacement les relations dans nos données. Cependant, le modèle LSTM, bien que théoriquement plus adapté aux séries temporelles, s'est avéré plus difficile à entraîner et n'a pas immédiatement surpassé le MLP. Cela m'a fait réfléchir à l'équilibre entre complexité du modèle et qualité des données.
+### What I learned/my thoughts
+Training the MLP model revealed that even a relatively simple architecture can effectively capture relationships in our data.
+However, the LSTM model, although theoretically more suited to time series, proved more difficult to train and did not immediately outperform the MLP.
+This made me think about the balance between model complexity and data quality.
 
-### Plan pour la semaine prochaine
-- Finaliser l'évaluation des modèles neuronaux
-- Contribuer à la comparaison globale des modèles
-- Commencer à rédiger les sections techniques du rapport
+### Plan for next week
+- Finalize the evaluation of neural network models
+- Contribute to the overall model comparison
+- Start writing the technical sections of the report
 
-## Semaine 4 (date: 26/02/2025)
+## Week 4 (date: 26/02/2025)
 
-### Ce que j'ai fait cette semaine
-J'ai finalisé l'évaluation des modèles neuronaux et contribué à la comparaison globale. Le MLP a obtenu d'excellentes performances, mais j'ai été surprise de voir que le modèle Ridge était encore meilleur. J'ai analysé les prédictions en détail pour comprendre où chaque modèle excelle ou échoue. J'ai également contribué significativement à la rédaction du rapport, en particulier pour les sections méthodologiques.
+### What I did this week
+I finalized the evaluation of neural network models and contributed to the overall comparison.
+The MLP achieved excellent performance, but I was surprised to see that the Ridge model was even better.
+I analyzed the predictions in detail to understand where each model excels or fails.
+I also contributed significantly to writing the report, particularly the methodological sections.
 
-### Ce que j'ai appris/mes réflexions
-Cette dernière semaine a souligné l'importance d'une évaluation comparative rigoureuse des modèles. J'ai été particulièrement intéressée par la façon dont différents modèles peuvent capter différents aspects des données. Bien que le Ridge ait obtenu le meilleur R², j'ai remarqué que le MLP était parfois plus précis lors de changements rapides dans les prix.
+### What I learned/my thoughts
+This final week highlighted the importance of rigorous comparative model evaluation.
+I was particularly interested in how different models can capture different aspects of the data.
+Although Ridge had the best R², I noticed that the MLP was sometimes more accurate during rapid changes in prices.
 
-### Plan pour la semaine prochaine
-- Finaliser la rédaction du rapport
-- Créer des visualisations supplémentaires pour illustrer les performances des modèles
-- Préparer la présentation finale
+### Plan for next week
+- Finalize the report writing
+- Create additional visualizations to illustrate model performance
+- Prepare the final presentation
 
-## Réflexion finale sur le projet
-Ce projet a été une expérience enrichissante qui m'a permis d'approfondir ma compréhension des réseaux de neurones et de leur application aux problèmes de prédiction de séries temporelles. J'ai particulièrement apprécié l'aspect collaboratif du travail, où les différentes expertises des membres de l'équipe ont pu se compléter.
+## Final reflection on the project
+This project was an enriching experience that deepened my understanding of neural networks and their application to time series prediction problems.
+I particularly appreciated the collaborative aspect of the work, where the different expertise of team members complemented each other.
 
-La découverte que le modèle Ridge surpassait le réseau de neurones a été une leçon d'humilité et un rappel que les modèles les plus simples peuvent parfois être les plus efficaces. Pour l'avenir, je suis intéressée par l'exploration de modèles hybrides qui combineraient la capacité des réseaux de neurones à capturer des relations non linéaires complexes avec la robustesse et l'interprétabilité des modèles linéaires.
+The discovery that the Ridge model outperformed the neural network was a humbling lesson and a reminder that simpler models can sometimes be more effective.
+For the future, I am interested in exploring hybrid models that would combine the ability of neural networks to capture complex non-linear relationships with the robustness and interpretability of linear models.
