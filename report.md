@@ -1,8 +1,3 @@
----
-title: Untitled
-
----
-
 # Prédiction des Prix de l'Électricité pour Habo Plast: Une Approche par Apprentissage Automatique 
 
 ### Résumé 
@@ -271,7 +266,9 @@ Annexe B: Visualisations supplémentaires
 ![feature_importance_Ridge](./results/feature_importance_Ridge.png)
 ![learning_curve_MLP](./results/learning_curve_MLP.png)
 ![model_predictions_comparison](./results/model_predictions_comparison.png)
-
+![model_predictions_comparison](./results/model_predictions_comparison.png)
+![cost_optimization_habo_plast](./interpretation/cost_optimization_habo_plast.png)
+![feature_importance_habo_plast](./interpretation/feature_importance_habo_plast.png)
 
 Annexe C: Tableau détaillé des caractéristiques utilisées 
 
