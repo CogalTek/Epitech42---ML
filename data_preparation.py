@@ -1,6 +1,3 @@
-# data_preparation.py
-# To be placed at the root of your repo
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
