@@ -3,7 +3,7 @@
 Name: Rémi Maigrot
 Student number: 20XX123
 
-## Week 1 (date: 05/02/2025)
+## Week 1 (date: 10/02/2025 to 16/02/2025)
 
 ### What I did this week
 This first week, I worked on understanding the problem and collecting data.
@@ -19,7 +19,7 @@ The CSV files contain hourly information that we need to combine into daily data
 - Start the exploratory data analysis
 - Explore correlations between prices and time variables (day of week, month, etc.)
 
-## Week 2 (date: 12/02/2025)
+## Week 2 (date: 17/02/2025 to 23/03/2025)
 
 ### What I did this week
 I finished the price data preprocessing script and started working on exploratory analysis. I created several visualizations to understand price trends and seasonality. I also added weather data to our dataset, making sure the dates were properly aligned.
@@ -34,7 +34,7 @@ Combining data from different sources was more complicated than expected, mainly
 - Prepare the data for training the models
 - Document the data preprocessing process
 
-## Week 3 (date: 19/02/2025)
+## Week 3 (date: 24/02/2025 to 02/03/2025)
 
 ### What I did this week
 This week, I worked on creating advanced features for the models, especially lagged variables and moving averages.
@@ -49,7 +49,7 @@ Creating lagged variables greatly improved the model's performance. I was surpri
 - Contribute to the model comparison
 - Continue writing the report
 
-## Week 4 (date: 26/02/2025)
+## Week 4 (date: 03/03/2025  to 09/03/2025)
 
 ### What I did this week
 I finalized the Ridge model performance analysis and contributed to the comparison with other models. 
