@@ -1,7 +1,6 @@
 # Individual project journal - Electricity price prediction Habo Plast
 
 Name: Arthur Bourdin
-Student number: 20XX789
 
 ## Week 1 (date: 05/02/2025)
 
