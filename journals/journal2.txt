@@ -1,9 +1,8 @@
 # Individual project journal - Electricity price prediction Habo Plast
 
 Name: Mathieu Rio
-Student number: 20XX456
 
-## Week 1 (date: 05/02/2025)
+## Week 1 (February 10, 2025 - February 16, 2025)
 
 ### What I did this week
 I took responsibility for exploring the SMHI weather data.
@@ -20,7 +19,7 @@ I was also surprised by the number of available stations and the diversity of me
 - Create visualizations to explore relationships between weather variables and prices
 - Start building a data integration pipeline
 
-## Week 2 (date: 12/02/2025)
+## Week 2 (February 17, 2025-February 23, 2025)
 
 ### What I did this week
 I finished the weather data preprocessing script and created visualizations to explore correlations.
@@ -37,7 +36,7 @@ I also learned the importance of proper spatial aggregation of weather data to g
 - Explore different feature selection techniques
 - Start documenting the model results
 
-## Week 3 (date: 19/02/2025)
+## Week 3 (February 24, 2025-March 2, 2025)
 
 ### What I did this week
 I worked on optimizing the Random Forest model using grid search for hyperparameters.
@@ -53,7 +52,7 @@ I discovered that lagged variables (prices from previous days) largely dominated
 - Contribute to the overall model comparison
 - Continue writing the report
 
-## Week 4 (date: 26/02/2025)
+## Week 6 (March 17, 2025-March 23, 2025)
 
 ### What I did this week
 I finalized the Random Forest model evaluation and contributed to the comparison of the three models.
