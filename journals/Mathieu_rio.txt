@@ -2,8 +2,9 @@
 
 Name: Mathieu Rio
 
-## Week 1 (February 10, 2025 - February 16, 2025)
-
+## Week 1 (( 10/02/2025 to 16/02/2025)
+In the first week we didnot start the project. We completed the project registration form on canvas,  and assigned the project Price prediction for Habo Plast AB and signed the contract for it.
+##Week 2 ( 17/02/2025 to 23/02/2025)
 ### What I did this week
 I took responsibility for exploring the SMHI weather data.
 I examined the file structure for different parameters (temperature, precipitation, snow, sunshine) and evaluated station coverage in the SE3 zone.
@@ -19,7 +20,7 @@ I was also surprised by the number of available stations and the diversity of me
 - Create visualizations to explore relationships between weather variables and prices
 - Start building a data integration pipeline
 
-## Week 2 (February 17, 2025-February 23, 2025)
+## Week 3 ( 24/02/2025 to 02/03/2025)
 
 ### What I did this week
 I finished the weather data preprocessing script and created visualizations to explore correlations.
@@ -36,7 +37,7 @@ I also learned the importance of proper spatial aggregation of weather data to g
 - Explore different feature selection techniques
 - Start documenting the model results
 
-## Week 3 (February 24, 2025-March 2, 2025)
+## Week 4 ( 03/03/2025 to 09/03/2025)
 
 ### What I did this week
 I worked on optimizing the Random Forest model using grid search for hyperparameters.
@@ -52,8 +53,7 @@ I discovered that lagged variables (prices from previous days) largely dominated
 - Contribute to the overall model comparison
 - Continue writing the report
 
-## Week 6 (March 17, 2025-March 23, 2025)
-
+## Week 5 ( 10/03/2025  to 016/03/2025)
 ### What I did this week
 I finalized the Random Forest model evaluation and contributed to the comparison of the three models.
 I was surprised to see that the Ridge model outperformed Random Forest, which led me to do additional analyses to understand why.
@@ -68,6 +68,8 @@ I also learned that a model's complexity is not always correlated with its perfo
 - Finalize code documentation
 - Contribute to final report revisions
 - Prepare the model demonstration for the final presentation
+##  Week 6 (17/03/2025  to 23/03/2025
+We finalized the project report and prepared the presentation for the project
 
 ## Final reflection on the project
 This project was an excellent opportunity to apply machine learning techniques to a real problem with concrete economic implications.
