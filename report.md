@@ -141,6 +141,7 @@ Coefficient of determination (R²): Proportion of variance explained by the mode
 The evaluation results of the three models on the test set are presented in the following table:
 
  ![Capture d'écran 2025-03-17 à 15.58.21](./result.png)
+Figure 1 – Comparison of Model Performance (R², MAE, RMSE, MSE)
 
 The Ridge regression model showed exceptional performance with an R² of 0.9987, indicating that it explains almost perfectly the variance in the test data. This performance is significantly better than that of the MLP (R² = 0.9755) and Random Forest (R² = 0.8152).
 
@@ -151,6 +152,7 @@ The RMSE, which measures the typical difference between predicted and actual val
 Analysis of the Ridge model coefficients and Random Forest feature importances reveals that:
 
 ![correlation_matrix](./results/correlation_matrix.png)
+Figure 2 – Correlation Matrix of Input Features and Electricity Prices
 
 Lagged price variables: Prices from previous days, especially Price_lag_1 (previous day's price) and Price_MA7 (7-day moving average), are the most influential predictors. This confirms the strong temporal autocorrelation of electricity prices.
 
@@ -163,6 +165,7 @@ Seasonal variables: Season and month are also important predictors, reflecting s
 The exceptional performance of the Ridge model can be explained by:
 
 ![model_predictions_comparison](./results/model_predictions_comparison.png)
+Figure 3 – Predicted vs. Actual Electricity Prices for All Models
 
 Linear structure of relationships: Although electricity prices are influenced by multiple factors, their relationships can be largely captured by a linear model, especially when lagged variables are included.
 
@@ -220,6 +223,31 @@ Alert system: Developing an automated system alerting Habo Plast when significan
 
 Extension to other electricity zones: Adapting the models to predict prices in other electricity zones of Sweden, offering a more complete view of the national market.
 
+#### D. Long-term Validation and Implications for Habo Plast
+
+Long-term Validation and Implications for Habo Plast
+To validate the robustness and practical utility of our models in a real operational context, we conducted prediction tests over an extended period of six consecutive weeks.
+
+![price_prediction_6weeks.png](./interpretation/price_prediction_6weeks.png)
+Figure 4 – Electricity Price Forecasts Over Six Consecutive Weeks
+
+This extended validation is essential to demonstrate that the observed performance is not coincidental or limited to specific periods.
+
+![cumulative_cost_savings.png](./interpretation/cumulative_cost_savings.png)
+Figure 5 – Cumulative Cost Savings Using Model-Based Predictions
+![week1_comparison.png](./interpretation/week1_comparison.png)
+Figure 6 – Model Performance Comparison – Week 1
+![week2_comparison.png](./interpretation/week2_comparison.png)
+Figure 7 – Model Performance Comparison – Week 2
+![week3_comparison.png](./interpretation/week3_comparison.png)
+Figure 8 – Model Performance Comparison – Week 3
+
+The three models were evaluated daily for six complete weeks, revealing consistent trends in their performance.
+
+The Ridge model maintains its superior accuracy throughout this period, with remarkably stable mean error. This consistency is particularly valuable for Habo Plast, as it enables reliable medium-term planning rather than simple short-term reactive adjustments.
+
+
+
 ### VI. References
 
 Here is a list of references you could include (to be completed/adapted according to sources actually used in your project):
@@ -246,20 +274,37 @@ https://github.com/CogalTek/Epitech42---ML
 
 Appendix B: Additional Visualizations
 
-![comparison_MAE](./results/comparison_MAE.png)
-![comparison_MSE](./results/comparison_MSE.png)
-![comparison_R2](./results/comparison_R2.png)
-![comparison_RMSE](./results/comparison_RMSE.png)
-![comparison_with_ensemble](./results/comparison_with_ensemble.png)
+ ![Capture d'écran 2025-03-17 à 15.58.21](./result.png)
+Figure 1 – Comparison of Model Performance (R², MAE, RMSE, MSE)
 ![correlation_matrix](./results/correlation_matrix.png)
-![feature_importance_Random Forest](./results/feature_importance_Random\ Forest.png)
+Figure 2 – Correlation Matrix of Input Features and Electricity Prices
+![model_predictions_comparison](./results/model_predictions_comparison.png)
+Figure 3 – Predicted vs. Actual Electricity Prices for All Models
+![price_prediction_6weeks.png](./interpretation/price_prediction_6weeks.png)
+Figure 4 – Electricity Price Forecasts Over Six Consecutive Weeks
+![cumulative_cost_savings.png](./interpretation/cumulative_cost_savings.png)
+Figure 5 – Cumulative Cost Savings Using Model-Based Predictions
+![week1_comparison.png](./interpretation/week1_comparison.png)
+Figure 6 – Model Performance Comparison – Week 1
+![week2_comparison.png](./interpretation/week2_comparison.png)
+Figure 7 – Model Performance Comparison – Week 2
+![week3_comparison.png](./interpretation/week3_comparison.png)
+Figure 8 – Model Performance Comparison – Week 3
+![comparison_MAE](./results/comparison_MAE.png)
+Figure 9 – Mean Absolute Error (MAE) Across Models
+![comparison_MSE](./results/comparison_MSE.png)
+Figure 10 – Mean Squared Error (MSE) Across Models
+![comparison_R2](./results/comparison_R2.png)
+Figure 11 – R² Scores Across Models
+![comparison_RMSE](./results/comparison_RMSE.png)
+Figure 12 – Root Mean Squared Error (RMSE) Across Models
+![comparison_with_ensemble](./results/comparison_with_ensemble.png)
+Figure 13 – Comparison Between Individual Models and Ensemble Approach
 ![feature_importance_Ridge](./results/feature_importance_Ridge.png)
+Figure 14 – Feature Importance According to Ridge Regression Coefficients
 ![learning_curve_MLP](./results/learning_curve_MLP.png)
-![model_predictions_comparison](./results/model_predictions_comparison.png)
-![model_predictions_comparison](./results/model_predictions_comparison.png)
+Figure 15 – MLP Training and Validation Loss Curve
 ![cost_optimization_habo_plast](./interpretation/cost_optimization_habo_plast.png)
+Figure 16 – Illustration of Cost Optimization for Habo Plast Using Forecasts
 ![feature_importance_habo_plast](./interpretation/feature_importance_habo_plast.png)
-
-Appendix C: Detailed Table of Features Used
-
-[Include here an explanatory table of all features with their description and relative importance]
+Figure 17 – Key Predictive Features Identified for Habo Plast
