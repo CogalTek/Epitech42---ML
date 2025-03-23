@@ -1,7 +1,6 @@
 # Individual project journal - Electricity price prediction Habo Plast
 
 Name: Rémi Maigrot
-Student number: 20XX123
 
 ## Week 1 (date: 10/02/2025 to 16/02/2025)
 
