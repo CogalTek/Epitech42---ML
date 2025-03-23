@@ -1,7 +1,6 @@
 # Individual project journal - Electricity price prediction Habo Plast
 
 Name: Loshma Latha Babu
-Student number: 20XX101
 
 ## Week 1 (date: 05/02/2025)
 
