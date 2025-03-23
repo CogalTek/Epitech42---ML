@@ -117,7 +117,10 @@ The MLP is a type of artificial neural network made up of several layers of neur
 
 ```Python
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout mlp_model = Sequential([ Dense(64, activation='relu', input_dim=X_train.shape[1]), Dropout(0.2), Dense(32, activation='relu'), Dropout(0.2), Dense(16, activation='relu'), Dense(1) ]) mlp_model.compile(loss='mse', optimizer='adam')
+from tensorflow.keras.layers import Dense, Dropout mlp_model = Sequential([
+Dense(64, activation='relu', input_dim=X_train.shape[1]), Dropout(0.2), 
+Dense(32, activation='relu'), Dropout(0.2), Dense(16, activation='relu'),
+Dense(1) ]) mlp_model.compile(loss='mse', optimizer='adam')
 ```
 
 Training was done with the Adam optimizer and early stopping to avoid overfitting.
