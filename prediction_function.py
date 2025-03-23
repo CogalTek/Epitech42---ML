@@ -1,6 +1,3 @@
-# prediction_function.py
-# À placer à la racine de votre repo
-
 import numpy as np
 import pandas as pd
 import joblib
