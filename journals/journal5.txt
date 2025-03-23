@@ -1,7 +1,6 @@
 # Individual project journal - Electricity price prediction Habo Plast
 
 Name: Deepa Krishnan
-Student number: 20XX202
 
 ## Week 1 (date: 05/02/2025)
 
