@@ -1,0 +1,15 @@
+=== Projet de prédiction des prix de l'électricité pour Habo Plast ===
+
+Nombre de caractéristiques: 16
+Caractéristiques: Temperature, Precipitation, SnowDepth, SunshineHours, Month, DayOfWeek, Season, Price_lag_1, Price_lag_2, Price_lag_3, Price_lag_4, Price_lag_5, Price_lag_6, Price_lag_7, Price_MA7, Temp_MA7
+
+=== Résultats des modèles ===
+                          Model       R²      RMSE       MAE
+      Linear Regression (Ridge) 0.998745  1.724184  0.964061
+Ensemble Method (Random Forest) 0.815244 20.919501 10.517880
+           Neural Network (MLP) 0.968847  8.590181  5.273682
+             Ensemble (Average) 0.960844  9.630501  5.117301
+
+Le meilleur modèle est Linear Regression (Ridge) avec un R² de 0.9987
+
+Temps d'exécution total: 0.51 minutes

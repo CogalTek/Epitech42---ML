@@ -1,0 +1,77 @@
+# Individual project journal - Electricity price prediction Habo Plast
+
+Name: Rémi Maigrot
+
+## Week 1 ( 10/02/2025 to 16/02/2025)
+In the first week we didnot start the project. We completed the project registration form on canvas,  and assigned the project Price prediction for Habo Plast AB and signed the contract for it.
+
+##Week 2 ( 17/02/2025 to 23/02/2025)
+### What I did this week
+This first week, I worked on understanding the problem and collecting data.
+I explored the ENTSO-E electricity price files for the SE3 zone and analyzed their structure.
+I also joined the project kickoff meeting with our group, where we defined roles and goals.
+
+### What I learned/my thoughts
+I discovered how complex the Swedish electricity market is and how prices change across different areas.
+The CSV files contain hourly information that we need to combine into daily data. I also learned how to handle large CSV files with pandas, which helped me better understand data structures.
+
+### Plan for next week
+- Finish the script for loading electricity price data
+- Start the exploratory data analysis
+- Explore correlations between prices and time variables (day of week, month, etc.)
+
+## Week 3 ( 24/02/2025 to 02/03/2025)
+
+### What I did this week
+I finished the price data preprocessing script and started working on exploratory analysis. I created several visualizations to understand price trends and seasonality. I also added weather data to our dataset, making sure the dates were properly aligned.
+
+### What I learned/my thoughts
+The data analysis showed clear seasonal trends in electricity prices, with peaks in winter and lows in summer.
+I also found a strong connection between temperature and prices.
+Combining data from different sources was more complicated than expected, mainly because of differences in date formats.
+
+### Plan for next week
+- Create additional features (lag features, moving averages)
+- Prepare the data for training the models
+- Document the data preprocessing process
+
+## Week 4 ( 03/03/2025 to 09/03/2025)
+
+### What I did this week
+This week, I worked on creating advanced features for the models, especially lagged variables and moving averages.
+I also helped implement the Ridge regression model and evaluate its initial performance.
+I started writing the "Data and Methodology" section of the report.
+
+### What I learned/my thoughts
+Creating lagged variables greatly improved the model's performance. I was surprised by how effective the Ridge model was despite being relatively simple. I also learned the importance of normalizing features for regularized regression models.
+
+### Plan for next week
+- Finalize the Ridge model performance analysis
+- Contribute to the model comparison
+- Continue writing the report
+
+## Week 5 ( 10/03/2025  to 016/03/2025)
+
+### What I did this week
+I finalized the Ridge model performance analysis and contributed to the comparison with other models. 
+I also helped create the final visualizations for the report and wrote the "Results" and "Conclusion" sections. 
+I helped organize the code and prepare the documentation.
+
+### What I learned/my thoughts
+Comparing the models was very educational. 
+I was impressed by the excellent performance of the Ridge model, which outperformed more complex methods like Random Forest and MLP.
+This reminded me of the importance of not always rushing to the most complex models before testing simpler approaches.
+
+### Plan for next week
+- Finalize the report
+- Prepare the project presentation
+- Review and comment the code for final submission
+##  Week 6 (date: 17/03/2025  to 23/03/2025
+We finalized the project report and prepared the presentation for the project
+## Final reflection on the project
+This project allowed me to apply machine learning techniques to a real and relevant problem.
+I particularly enjoyed working on data preparation and exploratory analysis, which are often the most crucial but neglected steps in data science projects.
+I also learned the importance of collaboration and clear communication within a team.
+
+The discovery that the Ridge model worked so well was an important lesson about the principle of simplicity in modeling.
+In the future, I would like to explore more the integration of other explanatory variables, such as renewable energy production data or national electricity demand.

@@ -1,0 +1,80 @@
+# Individual project journal - Electricity price prediction Habo Plast
+
+Name: Mathieu Rio
+
+## Week 1 (( 10/02/2025 to 16/02/2025)
+In the first week we didnot start the project. We completed the project registration form on canvas,  and assigned the project Price prediction for Habo Plast AB and signed the contract for it.
+##Week 2 ( 17/02/2025 to 23/02/2025)
+### What I did this week
+I took responsibility for exploring the SMHI weather data.
+I examined the file structure for different parameters (temperature, precipitation, snow, sunshine) and evaluated station coverage in the SE3 zone.
+I also started developing the script to extract and preprocess this data.
+
+### What I learned/my thoughts
+Weather data presents specific challenges: inconsistent formats between parameters, frequent missing values, and different sampling frequencies.
+I learned to handle these problems using appropriate preprocessing techniques.
+I was also surprised by the number of available stations and the diversity of measured parameters.
+
+### Plan for next week
+- Finish the weather data preprocessing script
+- Create visualizations to explore relationships between weather variables and prices
+- Start building a data integration pipeline
+
+## Week 3 ( 24/02/2025 to 02/03/2025)
+
+### What I did this week
+I finished the weather data preprocessing script and created visualizations to explore correlations.
+I worked with Emma to merge the weather data with the price data.
+I also started developing the Random Forest model and exploring different hyperparameter configurations.
+
+### What I learned/my thoughts
+Correlation analyses revealed interesting relationships: temperature has the strongest impact on prices, followed by sunshine.
+Precipitation and snow depth have more moderate but still significant effects.
+I also learned the importance of proper spatial aggregation of weather data to get values that represent the region.
+
+### Plan for next week
+- Optimize the Random Forest model hyperparameters
+- Explore different feature selection techniques
+- Start documenting the model results
+
+## Week 4 ( 03/03/2025 to 09/03/2025)
+
+### What I did this week
+I worked on optimizing the Random Forest model using grid search for hyperparameters.
+I implemented a feature importance analysis to understand which variables had the most impact on predictions.
+I also started writing the report section about the Random Forest model.
+
+### What I learned/my thoughts
+Hyperparameter optimization improved the model performance, but not as much as I hoped.
+I discovered that lagged variables (prices from previous days) largely dominated the feature importance, which makes sense but raises questions about the real usefulness of weather variables in this context.
+
+### Plan for next week
+- Finalize the Random Forest model evaluation
+- Contribute to the overall model comparison
+- Continue writing the report
+
+## Week 5 ( 10/03/2025  to 016/03/2025)
+### What I did this week
+I finalized the Random Forest model evaluation and contributed to the comparison of the three models.
+I was surprised to see that the Ridge model outperformed Random Forest, which led me to do additional analyses to understand why.
+I also participated in creating the ensemble model and evaluating its performance.
+
+### What I learned/my thoughts
+This last week helped me understand the importance of model interpretability.
+Although Random Forest didn't get the best performance, it offers valuable insight into the relative importance of different variables.
+I also learned that a model's complexity is not always correlated with its performance.
+
+### Plan for next week
+- Finalize code documentation
+- Contribute to final report revisions
+- Prepare the model demonstration for the final presentation
+##  Week 6 (17/03/2025  to 23/03/2025
+We finalized the project report and prepared the presentation for the project
+
+## Final reflection on the project
+This project was an excellent opportunity to apply machine learning techniques to a real problem with concrete economic implications.
+Electricity price prediction is a fascinating field that combines elements of time series, meteorology, and economics.
+
+I particularly enjoyed working on the Random Forest model and feature importance analysis, which provided valuable insights into factors influencing prices.
+Collaboration with the team was enriching, with everyone bringing their specific skills.
+For future work, I would like to further explore hybrid models that combine the advantages of different approaches.

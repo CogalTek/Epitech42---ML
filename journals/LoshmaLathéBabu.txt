@@ -1,0 +1,76 @@
+# Individual project journal - Electricity price prediction Habo Plast
+
+Name: Loshma Latha Babu
+
+## Week 1 (date: 05/02/2025)
+
+### What I did this week
+I took responsibility for setting up the project infrastructure, including creating the Git repository, organizing files, and defining coding standards.
+I also started exploring validation techniques for time series, which differ from traditional cross-validation methods.
+
+### What I learned/my thoughts
+I learned the importance of good organization from the beginning of a data science project.
+Validating time series models presents specific challenges, especially the need to respect the chronological order of data to avoid information leaks.
+I also thought about how evaluation metrics should be adapted to the context of price prediction.
+
+### Plan for next week
+- Finalize the project structure and validation procedures
+- Start working on the unified prediction function
+- Explore appropriate evaluation metrics for our problem
+
+## Week 2 (date: 12/02/2025)
+
+### What I did this week
+I finalized the project structure and implemented validation procedures respecting the time order of the data.
+I worked on developing the main script that orchestrates the entire processing pipeline.
+I also started exploring model comparison mechanisms and defining custom metrics relevant to industry.
+
+### What I learned/my thoughts
+Setting up a robust pipeline is crucial for ensuring reproducibility of results and making it easier to iterate on models.
+I also discovered that, beyond standard statistical metrics (RMSE, MAE, R²), it's important to consider business metrics like the economic cost of prediction errors, which can be asymmetric (underestimating the price may be more costly than overestimating it, or vice versa).
+
+### Plan for next week
+- Develop model comparison scripts
+- Implement the unified prediction function
+- Start working on technical documentation
+
+## Week 3 (date: 19/02/2025)
+
+### What I did this week
+I developed model comparison scripts, allowing systematic and fair evaluation of different approaches.
+I implemented the unified prediction function that encapsulates the three models and can provide either the best model's prediction or a weighted average.
+I also started writing technical documentation and the user manual.
+
+### What I learned/my thoughts
+Implementing a unified prediction function made me think about the trade-offs between flexibility and ease of use.
+I also learned the importance of rigorous testing to ensure models work correctly in different scenarios.
+Model comparison revealed interesting insights about their respective strengths and weaknesses.
+
+### Plan for next week
+- Finalize the prediction function and documentation
+- Contribute to writing the final report
+- Prepare visualizations for the presentation
+
+## Week 4 (date: 26/02/2025)
+
+### What I did this week
+I finalized the prediction function and created comprehensive documentation explaining its use.
+I contributed to writing the final report, particularly on technical aspects and model comparison results.
+I also created interactive visualizations to illustrate the predictions of different models compared to actual values.
+
+### What I learned/my thoughts
+This final week allowed me to consolidate my knowledge of the entire process of developing a prediction model.
+Creating effective visualizations is crucial for communicating results convincingly.
+I also thought about possibilities for future improvement and possible extensions of the project.
+
+### Plan for next week
+- Finalize all project deliverables
+- Prepare the final presentation
+- Consider possible improvements for future work
+
+## Final reflection on the project
+This project gave me valuable experience in managing an end-to-end data science project, from data collection and preprocessing to implementing advanced models and presenting results.
+I particularly appreciated the interdisciplinary collaboration, combining skills in programming, statistics, and domain knowledge.
+
+Electricity price prediction is a complex problem with many variables at play, and our approach showed that a combination of traditional and advanced techniques can give excellent results.
+For future work, I would be interested in integrating additional data such as renewable energy production forecasts and developing a continuous model update system to adapt to market changes.

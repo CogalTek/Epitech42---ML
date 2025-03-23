@@ -1,0 +1,82 @@
+# Individual project journal - Electricity price prediction Habo Plast
+
+Name: Arthur Bourdin
+
+## Week 1 ( 10/02/2025 to 16/02/2025)
+In the first week we didnot start the project. We completed the project registration form on canvas,  and assigned the project Price prediction for Habo Plast AB and signed the contract for it.
+
+##Week 2 ( 17/02/2025 to 23/02/2025)
+### What I did this week
+I took charge of the literature review on electricity price prediction techniques.
+I researched academic articles and relevant case studies to help us define our methodology.
+I also helped define the project's conceptual framework and identify potentially important variables.
+
+### What I learned/my thoughts
+The literature on electricity price prediction is rich and diverse.
+I discovered that approaches range from traditional econometric models to the most advanced deep learning techniques.
+I was particularly interested in the impact of weather variables on prices, which varies considerably depending on regions and market structures.
+
+### Plan for next week
+- Summarize the main findings from the literature review
+- Start exploring data structure and visualization techniques
+- Contribute to the design of the neural network architecture
+
+## Week 3 (24/02/2025 to 02/03/2025)
+
+### What I did this week
+I finalized the literature review summary and started working on the design of the MLP neural network.
+I explored different architectures and regularization techniques to avoid overfitting.
+I also collaborated with Emma and Anders on exploratory data analysis and creating new features.
+
+### What I learned/my thoughts
+Designing an appropriate network architecture is a challenge that requires both theoretical knowledge and practical experimentation.
+I learned the importance of early stopping and dropout to prevent overfitting, as well as the impact of activation function choice on model performance.
+
+### Plan for next week
+- Implement and train the MLP model
+- Evaluate its performance on validation data
+- Experiment with different hyperparameter configurations
+
+## Week 4 ( 03/03/2025 to 09/03/2025)
+
+### What I did this week
+I implemented the MLP model with TensorFlow and Keras, and trained several versions with different configurations.
+I analyzed the learning curves to detect signs of overfitting and adjusted hyperparameters accordingly.
+I also began experimenting with an LSTM model to capture temporal dependencies.
+
+### What I learned/my thoughts
+Training the MLP model revealed that even a relatively simple architecture can effectively capture relationships in our data.
+However, the LSTM model, although theoretically more suited to time series, proved more difficult to train and did not immediately outperform the MLP.
+This made me think about the balance between model complexity and data quality.
+
+### Plan for next week
+- Finalize the evaluation of neural network models
+- Contribute to the overall model comparison
+- Start writing the technical sections of the report
+
+## Week 5 ( 10/03/2025  to 016/03/2025)
+
+### What I did this week
+I finalized the evaluation of neural network models and contributed to the overall comparison.
+The MLP achieved excellent performance, but I was surprised to see that the Ridge model was even better.
+I analyzed the predictions in detail to understand where each model excels or fails.
+I also contributed significantly to writing the report, particularly the methodological sections.
+
+### What I learned/my thoughts
+This final week highlighted the importance of rigorous comparative model evaluation.
+I was particularly interested in how different models can capture different aspects of the data.
+Although Ridge had the best R², I noticed that the MLP was sometimes more accurate during rapid changes in prices.
+
+### Plan for next week
+- Finalize the report writing
+- Create additional visualizations to illustrate model performance
+- Prepare the final presentation
+##  Week 6 (17/03/2025  to 23/03/2025
+We finalized the project report and prepared the presentation for the project
+
+## Final reflection on the project
+This project was an enriching experience that deepened my understanding of neural networks and their application to time series prediction problems.
+I particularly appreciated the collaborative aspect of the work, where the different expertise of team members complemented each other.
+
+The discovery that the Ridge model outperformed the neural network was a humbling lesson and a reminder that simpler models can sometimes be more effective.
+For the future, I am interested in exploring hybrid models that would combine the ability of neural networks to capture complex non-linear relationships with the robustness and interpretability of linear models.

@@ -1,0 +1,76 @@
+# Individual project journal - Electricity price prediction Habo Plast
+
+Name: Deepa Krishnan
+
+## Week 1 (date: 05/02/2025)
+
+### What I did this week
+I took charge of analyzing the industrial context and specific needs of Habo Plast regarding electricity price prediction.
+I researched information about the plastic industry and its energy requirements, as well as how the electricity market works in Sweden.
+I also helped define the project goals and develop the work plan.
+
+### What I learned/my thoughts
+I discovered that the plastic industry is very sensitive to energy costs, which can represent up to 20% of operating costs.
+Sweden, with its price zone system, has a complex electricity market where prices can vary greatly by region and season.
+This understanding of the context is essential to develop a truly useful model for Habo Plast.
+
+### Plan for next week
+- Analyze the economic implications of prediction errors
+- Start exploring relationships between electricity prices and economic variables
+- Contribute to defining relevant evaluation metrics
+
+## Week 2 (date: 12/02/2025)
+
+### What I did this week
+I analyzed the economic implications of prediction errors for Habo Plast and developed a framework to evaluate the financial impact of different types of errors.
+I also started exploring relationships between electricity prices and various economic variables, although we decided to focus mainly on weather variables for this project.
+I contributed to defining evaluation metrics, emphasizing their relevance to industry.
+
+### What I learned/my thoughts
+The economic analysis revealed that for Habo Plast, underestimating electricity prices can be more costly than overestimating them, as it can lead to non-optimal production decisions.
+I also learned that relationships between electricity prices and economic variables are complex and often influenced by government policies and geopolitical factors that are difficult to include in a model.
+
+### Plan for next week
+- Start writing the introduction and context of the report
+- Contribute to interpreting preliminary model results
+- Explore practical implications of predictions for Habo Plast
+
+## Week 3 (date: 19/02/2025)
+
+### What I did this week
+I wrote the introduction and context of the report, emphasizing the relevance of the project for Habo Plast and the plastic industry in general.
+I also helped interpret preliminary model results, evaluating their practical usefulness for production planning.
+I started developing recommendations on how Habo Plast could integrate these predictions into their decision-making processes.
+
+### What I learned/my thoughts
+Interpreting model results made me realize the importance of clearly communicating predictions and their uncertainties to decision-makers.
+A statistically perfect model can be useless if it's not understandable or usable by the people who need to make decisions based on its predictions.
+I also thought about how predictions could be integrated into a larger decision support system.
+
+### Plan for next week
+- Finalize practical implications and recommendations
+- Contribute to writing the conclusion
+
+## Week 4 (date: 26/02/2025)
+
+### What I did this week
+I finalized the section on practical implications and recommendations for Habo Plast, detailing how the company could use the prediction model to optimize its energy consumption.
+I also contributed to writing the report conclusion and preparing the final presentation.
+I collaborated with the entire team to ensure report consistency and verify that our recommendations are based on solid results.
+
+### What I learned/my thoughts
+This final week strengthened my appreciation for the importance of translating technical results into practical and actionable recommendations.
+I also learned the importance of clearly and concisely communicating complex results to a non-technical audience.
+Looking at the whole project, I was impressed by how relatively simple models can provide valuable information for important business decisions.
+
+### Plan for next week
+- Prepare the final project presentation
+- Gather feedback on our recommendations
+- Consider possibilities for extending the project
+
+## Final reflection on the project
+This project was an excellent opportunity to apply machine learning techniques to a concrete industrial problem with significant economic implications.
+I particularly appreciated being able to combine technical aspects (modeling, data analysis) with business considerations (implications for Habo Plast, practical recommendations).
+
+The excellent result of the Ridge model shows that a relatively simple approach can be very effective when applied with a good understanding of the problem and quality data.
+For the future, I would be interested in exploring the integration of this model into a larger production optimization system, which could take into account not only electricity prices, but also other factors such as product demand, raw material costs, and capacity constraints.
